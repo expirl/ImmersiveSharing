@@ -37,6 +37,7 @@ public class FirebaseHeatmapVisualization : MonoBehaviour
 
     // CollectedData 리스트 선언
     List<CollectedData> collectedData = new List<CollectedData>();
+    private MeshRenderer currentSavedMeshRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -84,11 +85,24 @@ public class FirebaseHeatmapVisualization : MonoBehaviour
 
     void CollectData()
     {
-        
-        Vector2 textureCoord = headGazeTracking.GetTextureCoord();
-        dataX = textureCoord.x;
-        dataY = textureCoord.y;
-        MeshRenderer currentSavedMeshRenderer = headGazeTracking.GetMeshRenderer();
+
+        // GetTextureCoord() 호출 및 null 체크
+        Vector2? textureCoord = headGazeTracking.GetTextureCoord();
+        if (textureCoord.HasValue)
+        {
+            dataX = textureCoord.Value.x;
+            dataY = textureCoord.Value.y;
+            currentSavedMeshRenderer = headGazeTracking.GetMeshRenderer();
+           // MeshRenderer currentSavedMeshRenderer = headGazeTracking.GetMeshRenderer();
+
+            // 데이터 처리
+            Debug.Log($"Collected Data - X: {dataX}, Y: {dataY}");
+        }
+        else
+        {
+            Debug.Log("No texture coordinate data available.");
+        }
+       
 
         // MeshRenderer가 null인지 확인하여 오류 방지
         if (currentSavedMeshRenderer == null)

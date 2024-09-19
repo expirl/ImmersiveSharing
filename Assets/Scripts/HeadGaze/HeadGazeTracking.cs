@@ -147,7 +147,7 @@ public class HeadGazeTracking : MonoBehaviour
         }
     }
 
-    public Vector2 GetTextureCoord()
+    public Vector2? GetTextureCoord()
     {
         if (hit.textureCoord.x != 0 && hit.textureCoord.y != 0)
         {
@@ -155,7 +155,7 @@ public class HeadGazeTracking : MonoBehaviour
         }
         else
         {
-            return Vector2.zero; // 데이터가 없음을 나타내는 기본값 반환
+            return null; // 데이터가 없을 경우 null 반환
         }
     }
 
