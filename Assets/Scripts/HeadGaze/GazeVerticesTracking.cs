@@ -1,12 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
-using UnityEngine.UI;
-using Color = UnityEngine.Color;
 
-public class HeadGazeTracking : MonoBehaviour
+public class GazeVerticesTracking : MonoBehaviour
 {
     public Transform headTransform; // VR 헤드셋의 Transform을 연결합니다.
     public float gazeDistance = 10.0f; // 주시 거리를 설정합니다.
@@ -19,25 +15,23 @@ public class HeadGazeTracking : MonoBehaviour
 
     public float forwardOffset = 0.1f; // Ray의 시작점을 앞쪽으로 이동시키기 위한 오프셋 값
 
-    private Color originalColor; // 원래 색상을 저장할 변수입니다.
-    private int uiLayer;
-    private int boxObjectLayer;
     private int headGazeHeatmapObject;
-
 
     HeadGazeHeatmap headGazeHeatmap;
     RaycastHit hit;
     MeshRenderer currentMeshRenderer = null;
 
+
+ 
     void Start()
     {
-
-        uiLayer = LayerMask.NameToLayer("UI");
-        boxObjectLayer = LayerMask.NameToLayer("Box");
         headGazeHeatmapObject = LayerMask.NameToLayer("HeadGazeHeatmapObject");
-
         headGazeHeatmap = GetComponent<HeadGazeHeatmap>();
+        GazeRayVisualization();
+    }
 
+    void GazeRayVisualization()
+    {
         // LineRenderer 초기화
         if (lineRenderer == null)
         {
@@ -48,19 +42,17 @@ public class HeadGazeTracking : MonoBehaviour
         lineRenderer.material = new Material(Shader.Find("Sprites/Default")); // 기본 셰이더를 사용합니다.
         lineRenderer.startColor = Color.blue; // 선의 시작 부분 색상을 설정합니다.
         lineRenderer.endColor = Color.blue; // 선의 끝 부분 색상을 설정합니다.
-       
-        
     }
+
 
     void Update()
     {
-        
         // 헤드의 방향과 위치를 기반으로 Ray를 생성합니다.
         Vector3 offsetPosition = headTransform.position + headTransform.forward * forwardOffset;
 
         //Ray gazeRay = new Ray(headTransform.position, headTransform.forward);
         Ray gazeRay = new Ray(offsetPosition, headTransform.forward);
-      // RaycastHit hit;
+        // RaycastHit hit;
 
         // LineRenderer를 사용하여 Ray를 시각화합니다.
         lineRenderer.SetPosition(0, gazeRay.origin);
@@ -75,10 +67,9 @@ public class HeadGazeTracking : MonoBehaviour
                 Debug.LogWarning("Null Mesh Collider");
                 return;
             }
-                
+
             GameObject gazedObject = hit.collider.gameObject;
-           
-            // 주시 오브젝트가 바뀌지 않은 경우 타이머를 증가시킵니다.
+
             if (gazedObject == currentGazedObject)
             {
                 gazeTimer += Time.deltaTime;
@@ -86,80 +77,32 @@ public class HeadGazeTracking : MonoBehaviour
                 // 주시 시간이 설정된 시간을 넘으면 상호작용을 활성화합니다.
                 if (gazeTimer >= activationTime)
                 {
-                    //gazedObject.GetComponent<Renderer>().material.color = Color.red;
-                    ActivateGazedObject(gazedObject, gazedObject.layer);
-                    //TestDrawVertices(meshCollider);
-                    gazeTimer = 0.0f; // 타이머를 초기화합니다.
-                    //Debug.Log("test");
-
+                    TestDrawVertices(meshCollider);
+                  //  Debug.Log("test");
                 }
             }
 
+            // 새로운 오브젝트를 주시하기 시작한 경우 타이머를 초기화합니다.
             else
             {
-                // 새로운 오브젝트를 주시하기 시작한 경우 원래 색상으로 복원하고 타이머를 초기화합니다.
-                ResetGazeObjectColor();
                 currentGazedObject = gazedObject;
                 gazeTimer = 0.0f;
-
-                if(gazedObject.layer != headGazeHeatmapObject)
-                {
-                    originalColor = gazedObject.GetComponent<Renderer>().material.color;
-                }
-                
             }
+
         }
 
+        // 주시 중인 오브젝트가 없으면 타이머를 초기화합니다.
         else
         {
-            // 주시 중인 오브젝트가 없으면 원래 색상으로 복원하고 타이머를 초기화합니다.
-            ResetGazeObjectColor();
             currentGazedObject = null;
             gazeTimer = 0.0f;
         }
-    }
 
-   
-    // 주시한 오브젝트의 색상을 변경하는 메서드입니다.
-    void ActivateGazedObject(GameObject gazedObject, int getLayerName)
-    {
-        if(getLayerName == uiLayer)
-        {
-            // 주시된 오브젝트에서 Button 컴포넌트를 찾습니다.
-            var button = gazedObject.GetComponent<Button>();
-            if (button != null)
-            {
-                // 버튼의 색상을 변경합니다.
-                ColorBlock colors = button.colors;
-                colors.normalColor = Color.red; // 원하는 색상으로 변경합니다. 여기서는 빨간색을 예로 들었습니다.
-                button.colors = colors;
-            }
-        }
-
-        else if(getLayerName == boxObjectLayer)
-        {
-            var renderer = gazedObject.GetComponent<Renderer>();
-            if (renderer != null)
-            {
-                renderer.material.color = Color.green;
-            }
-        }
-
-        else if(getLayerName == headGazeHeatmapObject)
-        {
-            // GetTextureCoord();
-            var meshRenderer = gazedObject.GetComponent<MeshRenderer>();
-            if (meshRenderer != null)
-            {
-                headGazeHeatmap.addHitPoint(hit.textureCoord.x * 4 - 2, hit.textureCoord.y * 4 - 2, meshRenderer);
-                currentMeshRenderer = meshRenderer;
-            }
-        }
-    }
+     }
 
     void TestDrawVertices(MeshCollider gazeMeshCollider)
     {
-       
+
         Mesh mesh = gazeMeshCollider.sharedMesh;
         Vector3[] vertices = mesh.vertices;
         int[] triangles = mesh.triangles;
@@ -167,46 +110,29 @@ public class HeadGazeTracking : MonoBehaviour
         Vector3 p1 = vertices[triangles[hit.triangleIndex * 3 + 1]];
         Vector3 p2 = vertices[triangles[hit.triangleIndex * 3 + 2]];
         Transform hitTransform = hit.collider.transform;
+
+        // Transform을 적용하여 월드 좌표로 변환
         p0 = hitTransform.TransformPoint(p0);
         p1 = hitTransform.TransformPoint(p1);
         p2 = hitTransform.TransformPoint(p2);
+
+        // 삼각형의 중심점 구하기
+        Vector3 center = (p0 + p1 + p2) / 3;
+
+        // 각 정점을 중심점으로부터 일정 비율로 확장
+        float scaleFactor = 10f; // 삼각형을 1.5배 크게 시각화
+        p0 = center + (p0 - center) * scaleFactor;
+        p1 = center + (p1 - center) * scaleFactor;
+        p2 = center + (p2 - center) * scaleFactor;
+
+        // 삼각형 시각화
         Debug.DrawLine(p0, p1, Color.red);
         Debug.DrawLine(p1, p2, Color.red);
         Debug.DrawLine(p2, p0, Color.red);
+
         Debug.Log("DrawVertices");
-    }
 
 
-    public Vector2? GetTextureCoord()
-    {
-        if (hit.textureCoord.x != 0 && hit.textureCoord.y != 0)
-        {
-            return new Vector2(hit.textureCoord.x * 4 - 2, hit.textureCoord.y * 4 - 2);
-        }
-        else
-        {
-            return null; // 데이터가 없을 경우 null 반환
-        }
-    }
-
-
-    public MeshRenderer GetMeshRenderer()
-    {
-        return currentMeshRenderer;
-    }
-
-
-    // 이전에 주시한 오브젝트의 색상을 원래대로 복원하는 메서드입니다.
-    private void ResetGazeObjectColor()
-    {
-        if (currentGazedObject != null)
-        {
-            var render = currentGazedObject.GetComponent<Renderer>();
-            if (render != null)
-            {
-                render.material.color = originalColor;
-            }
-        }
     }
 
 }
