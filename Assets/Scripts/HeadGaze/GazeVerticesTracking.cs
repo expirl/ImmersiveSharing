@@ -77,7 +77,7 @@ public class GazeVerticesTracking : MonoBehaviour
                 // 주시 시간이 설정된 시간을 넘으면 상호작용을 활성화합니다.
                 if (gazeTimer >= activationTime)
                 {
-                    TestDrawVertices(meshCollider);
+                    TestDrawVertices(meshCollider, gazedObject);
                   //  Debug.Log("test");
                 }
             }
@@ -100,7 +100,7 @@ public class GazeVerticesTracking : MonoBehaviour
 
      }
 
-    void TestDrawVertices(MeshCollider gazeMeshCollider)
+    void TestDrawVertices(MeshCollider gazeMeshCollider, GameObject gazeObject)
     {
 
         Mesh mesh = gazeMeshCollider.sharedMesh;
@@ -116,11 +116,16 @@ public class GazeVerticesTracking : MonoBehaviour
         p1 = hitTransform.TransformPoint(p1);
         p2 = hitTransform.TransformPoint(p2);
 
-        // 삼각형의 중심점 구하기
-        Vector3 center = (p0 + p1 + p2) / 3;
+        // Ray가 충돌한 지점의 로컬 좌표 구하기
+        Vector3 localHitPoint = hitTransform.InverseTransformPoint(hit.point);
+
+        // 로컬 좌표를 히트맵에 전달
+        Debug.Log("LocalHitPoint X: " + localHitPoint.x + ", LocalHitPoint Y: " + localHitPoint.y);
+        ActivateGazeHeatMap(localHitPoint.x, localHitPoint.y, gazeObject);
 
         // 각 정점을 중심점으로부터 일정 비율로 확장
-        float scaleFactor = 10f; // 삼각형을 1.5배 크게 시각화
+        float scaleFactor = 10f;
+        Vector3 center = (p0 + p1 + p2) / 3;
         p0 = center + (p0 - center) * scaleFactor;
         p1 = center + (p1 - center) * scaleFactor;
         p2 = center + (p2 - center) * scaleFactor;
@@ -130,9 +135,18 @@ public class GazeVerticesTracking : MonoBehaviour
         Debug.DrawLine(p1, p2, Color.red);
         Debug.DrawLine(p2, p0, Color.red);
 
-        Debug.Log("DrawVertices");
+        // Debug.Log("DrawVertices");
 
 
+    }
+
+    void ActivateGazeHeatMap(float xp, float yp, GameObject gazeObject)
+    {
+        var meshRenderer = gazeObject.GetComponent<MeshRenderer>();
+        if(meshRenderer != null)
+        {
+            headGazeHeatmap.addHitPoint(xp, yp, meshRenderer);
+        }
     }
 
 }
