@@ -78,6 +78,7 @@ public class GazeVerticesTracking : MonoBehaviour
                 if (gazeTimer >= activationTime)
                 {
                     TestDrawVertices(meshCollider, gazedObject);
+                   // gazeTimer = 0.0f;
                   //  Debug.Log("test");
                 }
             }
@@ -102,50 +103,60 @@ public class GazeVerticesTracking : MonoBehaviour
 
     void TestDrawVertices(MeshCollider gazeMeshCollider, GameObject gazeObject)
     {
-
+        // Mesh 및 Vertices 가져오기
         Mesh mesh = gazeMeshCollider.sharedMesh;
         Vector3[] vertices = mesh.vertices;
         int[] triangles = mesh.triangles;
+
+        // 삼각형의 각 정점 가져오기
         Vector3 p0 = vertices[triangles[hit.triangleIndex * 3 + 0]];
         Vector3 p1 = vertices[triangles[hit.triangleIndex * 3 + 1]];
         Vector3 p2 = vertices[triangles[hit.triangleIndex * 3 + 2]];
         Transform hitTransform = hit.collider.transform;
 
-        // Transform을 적용하여 월드 좌표로 변환
+        // Transform 적용하여 월드 좌표로 변환
         p0 = hitTransform.TransformPoint(p0);
         p1 = hitTransform.TransformPoint(p1);
         p2 = hitTransform.TransformPoint(p2);
 
-        // Ray가 충돌한 지점의 로컬 좌표 구하기
-        Vector3 localHitPoint = hitTransform.InverseTransformPoint(hit.point);
-
-        // 로컬 좌표를 히트맵에 전달
-        Debug.Log("LocalHitPoint X: " + localHitPoint.x + ", LocalHitPoint Y: " + localHitPoint.y);
-        ActivateGazeHeatMap(localHitPoint.x, localHitPoint.y, gazeObject);
-
-        // 각 정점을 중심점으로부터 일정 비율로 확장
-        float scaleFactor = 10f;
+        // 삼각형의 중심점 구하기
         Vector3 center = (p0 + p1 + p2) / 3;
+
+        // 삼각형 면적 계산 (히트맵 반경에 사용할 크기)
+        float area = Vector3.Cross(p1 - p0, p2 - p0).magnitude / 2f;
+        float radius = Mathf.Sqrt(area);  // 면적에 비례한 반경 설정
+
+        // UV 좌표 가져오기
+        Vector2[] uvs = mesh.uv;
+        Vector2 uv0 = uvs[triangles[hit.triangleIndex * 3 + 0]];
+        Vector2 uv1 = uvs[triangles[hit.triangleIndex * 3 + 1]];
+        Vector2 uv2 = uvs[triangles[hit.triangleIndex * 3 + 2]];
+
+        // 삼각형 중심점의 UV 좌표 계산
+        Vector2 centerUV = (uv0 + uv1 + uv2) / 3;
+
+        // 중심점의 UV 좌표 기반으로 히트맵 활성화
+         ActivateGazeHeatMap(centerUV.x, centerUV.y, gazeObject, 1.0f);
+
+        // 삼각형 시각화 - 각 정점을 중심점으로부터 일정 비율로 확장
+        float scaleFactor = 10f;  // 삼각형을 10배 크게 시각화
         p0 = center + (p0 - center) * scaleFactor;
         p1 = center + (p1 - center) * scaleFactor;
         p2 = center + (p2 - center) * scaleFactor;
 
         // 삼각형 시각화
-        Debug.DrawLine(p0, p1, Color.red);
-        Debug.DrawLine(p1, p2, Color.red);
-        Debug.DrawLine(p2, p0, Color.red);
-
-        // Debug.Log("DrawVertices");
-
+        Debug.DrawLine(p0, p1, Color.green);
+        Debug.DrawLine(p1, p2, Color.green);
+        Debug.DrawLine(p2, p0, Color.green);
 
     }
 
-    void ActivateGazeHeatMap(float xp, float yp, GameObject gazeObject)
+    void ActivateGazeHeatMap(float xp, float yp, GameObject gazeObject, float radius)
     {
         var meshRenderer = gazeObject.GetComponent<MeshRenderer>();
-        if(meshRenderer != null)
+        if (meshRenderer != null)
         {
-            headGazeHeatmap.addHitPoint(xp, yp, meshRenderer);
+            headGazeHeatmap.addHitPoint(xp, yp, meshRenderer, radius);
         }
     }
 

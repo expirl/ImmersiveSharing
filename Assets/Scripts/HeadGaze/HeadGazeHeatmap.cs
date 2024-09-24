@@ -38,7 +38,7 @@ public class HeadGazeHeatmap : MonoBehaviour
         
     }
 
-    public void addHitPoint(float xp, float yp, MeshRenderer hitRenderer = null)
+   public void addHitPoint(float xp, float yp, MeshRenderer hitRenderer = null, float radius = 1.0f)
     {
         mPoints[mHitCount * 3] = xp;
         mPoints[mHitCount * 3 + 1] = yp;
@@ -47,12 +47,12 @@ public class HeadGazeHeatmap : MonoBehaviour
         mHitCount++;
         mHitCount %= 32;
 
-        // hitRenderer가 null이 아닌 경우 Shader 스크립트에 전송
         if (hitRenderer != null)
         {
             Material hitMaterial = hitRenderer.material;
             hitMaterial.SetFloatArray("_Hits", mPoints);
             hitMaterial.SetInt("_HitCount", mHitCount);
+            hitMaterial.SetFloat("_Radius", radius);  // 반경 값 반영
         }
     }
 
