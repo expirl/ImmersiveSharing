@@ -48,7 +48,7 @@ namespace TS.GazeInteraction
         {
             get { return _isActivable; }
         }
-        public bool IsActivated { get; private set; }
+        public bool IsActivated { get; set; }
 
         private Collider _collider;
 
