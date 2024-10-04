@@ -1,0 +1,1628 @@
+id: cs.temp.dll
+language: CSharp
+name:
+  Default: cs.temp.dll
+qualifiedName:
+  Default: cs.temp.dll
+type: Assembly
+modifiers: {}
+items:
+- id: TS.GazeInteraction
+  commentId: N:TS.GazeInteraction
+  language: CSharp
+  name:
+    CSharp: TS.GazeInteraction
+    VB: TS.GazeInteraction
+  nameWithType:
+    CSharp: TS.GazeInteraction
+    VB: TS.GazeInteraction
+  qualifiedName:
+    CSharp: TS.GazeInteraction
+    VB: TS.GazeInteraction
+  type: Namespace
+  assemblies:
+  - cs.temp.dll
+  modifiers: {}
+  items:
+  - id: TS.GazeInteraction.GazeInteractable
+    commentId: T:TS.GazeInteraction.GazeInteractable
+    language: CSharp
+    name:
+      CSharp: GazeInteractable
+      VB: GazeInteractable
+    nameWithType:
+      CSharp: GazeInteractable
+      VB: GazeInteractable
+    qualifiedName:
+      CSharp: TS.GazeInteraction.GazeInteractable
+      VB: TS.GazeInteraction.GazeInteractable
+    type: Class
+    assemblies:
+    - cs.temp.dll
+    namespace: TS.GazeInteraction
+    source:
+      id: GazeInteractable
+      path: ''
+      startLine: 12
+    summary: "\nComponent applied to GameObjects that can be interacted with using the gaze.\n"
+    example: []
+    syntax:
+      content:
+        CSharp: 'public class GazeInteractable : MonoBehaviour'
+        VB: >-
+          Public Class GazeInteractable
+
+              Inherits MonoBehaviour
+    inheritance:
+    - System.Object
+    modifiers:
+      CSharp:
+      - public
+      - class
+      VB:
+      - Public
+      - Class
+    items:
+    - id: TS.GazeInteraction.GazeInteractable.Enter
+      commentId: E:TS.GazeInteraction.GazeInteractable.Enter
+      language: CSharp
+      name:
+        CSharp: Enter
+        VB: Enter
+      nameWithType:
+        CSharp: GazeInteractable.Enter
+        VB: GazeInteractable.Enter
+      qualifiedName:
+        CSharp: TS.GazeInteraction.GazeInteractable.Enter
+        VB: TS.GazeInteraction.GazeInteractable.Enter
+      type: Event
+      assemblies:
+      - cs.temp.dll
+      namespace: TS.GazeInteraction
+      source:
+        id: Enter
+        path: ''
+        startLine: 19
+      syntax:
+        content:
+          CSharp: public event GazeInteractable.OnEnter Enter
+          VB: Public Event Enter As GazeInteractable.OnEnter
+        return:
+          type: TS.GazeInteraction.GazeInteractable.OnEnter
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: TS.GazeInteraction.GazeInteractable.Stay
+      commentId: E:TS.GazeInteraction.GazeInteractable.Stay
+      language: CSharp
+      name:
+        CSharp: Stay
+        VB: Stay
+      nameWithType:
+        CSharp: GazeInteractable.Stay
+        VB: GazeInteractable.Stay
+      qualifiedName:
+        CSharp: TS.GazeInteraction.GazeInteractable.Stay
+        VB: TS.GazeInteraction.GazeInteractable.Stay
+      type: Event
+      assemblies:
+      - cs.temp.dll
+      namespace: TS.GazeInteraction
+      source:
+        id: Stay
+        path: ''
+        startLine: 22
+      syntax:
+        content:
+          CSharp: public event GazeInteractable.OnStay Stay
+          VB: Public Event Stay As GazeInteractable.OnStay
+        return:
+          type: TS.GazeInteraction.GazeInteractable.OnStay
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: TS.GazeInteraction.GazeInteractable.Exit
+      commentId: E:TS.GazeInteraction.GazeInteractable.Exit
+      language: CSharp
+      name:
+        CSharp: Exit
+        VB: Exit
+      nameWithType:
+        CSharp: GazeInteractable.Exit
+        VB: GazeInteractable.Exit
+      qualifiedName:
+        CSharp: TS.GazeInteraction.GazeInteractable.Exit
+        VB: TS.GazeInteraction.GazeInteractable.Exit
+      type: Event
+      assemblies:
+      - cs.temp.dll
+      namespace: TS.GazeInteraction
+      source:
+        id: Exit
+        path: ''
+        startLine: 25
+      syntax:
+        content:
+          CSharp: public event GazeInteractable.OnExit Exit
+          VB: Public Event Exit As GazeInteractable.OnExit
+        return:
+          type: TS.GazeInteraction.GazeInteractable.OnExit
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: TS.GazeInteraction.GazeInteractable.Activated
+      commentId: E:TS.GazeInteraction.GazeInteractable.Activated
+      language: CSharp
+      name:
+        CSharp: Activated
+        VB: Activated
+      nameWithType:
+        CSharp: GazeInteractable.Activated
+        VB: GazeInteractable.Activated
+      qualifiedName:
+        CSharp: TS.GazeInteraction.GazeInteractable.Activated
+        VB: TS.GazeInteraction.GazeInteractable.Activated
+      type: Event
+      assemblies:
+      - cs.temp.dll
+      namespace: TS.GazeInteraction
+      source:
+        id: Activated
+        path: ''
+        startLine: 28
+      syntax:
+        content:
+          CSharp: public event GazeInteractable.OnActivated Activated
+          VB: Public Event Activated As GazeInteractable.OnActivated
+        return:
+          type: TS.GazeInteraction.GazeInteractable.OnActivated
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: TS.GazeInteraction.GazeInteractable.OnGazeEnter
+      commentId: F:TS.GazeInteraction.GazeInteractable.OnGazeEnter
+      language: CSharp
+      name:
+        CSharp: OnGazeEnter
+        VB: OnGazeEnter
+      nameWithType:
+        CSharp: GazeInteractable.OnGazeEnter
+        VB: GazeInteractable.OnGazeEnter
+      qualifiedName:
+        CSharp: TS.GazeInteraction.GazeInteractable.OnGazeEnter
+        VB: TS.GazeInteraction.GazeInteractable.OnGazeEnter
+      type: Field
+      assemblies:
+      - cs.temp.dll
+      namespace: TS.GazeInteraction
+      source:
+        id: OnGazeEnter
+        path: ''
+        startLine: 35
+      syntax:
+        content:
+          CSharp: public UnityEvent OnGazeEnter
+          VB: Public OnGazeEnter As UnityEvent
+        return:
+          type: UnityEvent
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: TS.GazeInteraction.GazeInteractable.OnGazeStay
+      commentId: F:TS.GazeInteraction.GazeInteractable.OnGazeStay
+      language: CSharp
+      name:
+        CSharp: OnGazeStay
+        VB: OnGazeStay
+      nameWithType:
+        CSharp: GazeInteractable.OnGazeStay
+        VB: GazeInteractable.OnGazeStay
+      qualifiedName:
+        CSharp: TS.GazeInteraction.GazeInteractable.OnGazeStay
+        VB: TS.GazeInteraction.GazeInteractable.OnGazeStay
+      type: Field
+      assemblies:
+      - cs.temp.dll
+      namespace: TS.GazeInteraction
+      source:
+        id: OnGazeStay
+        path: ''
+        startLine: 36
+      syntax:
+        content:
+          CSharp: public UnityEvent OnGazeStay
+          VB: Public OnGazeStay As UnityEvent
+        return:
+          type: UnityEvent
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: TS.GazeInteraction.GazeInteractable.OnGazeExit
+      commentId: F:TS.GazeInteraction.GazeInteractable.OnGazeExit
+      language: CSharp
+      name:
+        CSharp: OnGazeExit
+        VB: OnGazeExit
+      nameWithType:
+        CSharp: GazeInteractable.OnGazeExit
+        VB: GazeInteractable.OnGazeExit
+      qualifiedName:
+        CSharp: TS.GazeInteraction.GazeInteractable.OnGazeExit
+        VB: TS.GazeInteraction.GazeInteractable.OnGazeExit
+      type: Field
+      assemblies:
+      - cs.temp.dll
+      namespace: TS.GazeInteraction
+      source:
+        id: OnGazeExit
+        path: ''
+        startLine: 37
+      syntax:
+        content:
+          CSharp: public UnityEvent OnGazeExit
+          VB: Public OnGazeExit As UnityEvent
+        return:
+          type: UnityEvent
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: TS.GazeInteraction.GazeInteractable.OnGazeActivated
+      commentId: F:TS.GazeInteraction.GazeInteractable.OnGazeActivated
+      language: CSharp
+      name:
+        CSharp: OnGazeActivated
+        VB: OnGazeActivated
+      nameWithType:
+        CSharp: GazeInteractable.OnGazeActivated
+        VB: GazeInteractable.OnGazeActivated
+      qualifiedName:
+        CSharp: TS.GazeInteraction.GazeInteractable.OnGazeActivated
+        VB: TS.GazeInteraction.GazeInteractable.OnGazeActivated
+      type: Field
+      assemblies:
+      - cs.temp.dll
+      namespace: TS.GazeInteraction
+      source:
+        id: OnGazeActivated
+        path: ''
+        startLine: 38
+      syntax:
+        content:
+          CSharp: public UnityEvent OnGazeActivated
+          VB: Public OnGazeActivated As UnityEvent
+        return:
+          type: UnityEvent
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: TS.GazeInteraction.GazeInteractable.OnGazeToggle
+      commentId: F:TS.GazeInteraction.GazeInteractable.OnGazeToggle
+      language: CSharp
+      name:
+        CSharp: OnGazeToggle
+        VB: OnGazeToggle
+      nameWithType:
+        CSharp: GazeInteractable.OnGazeToggle
+        VB: GazeInteractable.OnGazeToggle
+      qualifiedName:
+        CSharp: TS.GazeInteraction.GazeInteractable.OnGazeToggle
+        VB: TS.GazeInteraction.GazeInteractable.OnGazeToggle
+      type: Field
+      assemblies:
+      - cs.temp.dll
+      namespace: TS.GazeInteraction
+      source:
+        id: OnGazeToggle
+        path: ''
+        startLine: 39
+      syntax:
+        content:
+          CSharp: public UnityEvent<bool> OnGazeToggle
+          VB: Public OnGazeToggle As UnityEvent(Of Boolean)
+        return:
+          type: UnityEvent{System.Boolean}
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: TS.GazeInteraction.GazeInteractable.IsEnabled
+      commentId: P:TS.GazeInteraction.GazeInteractable.IsEnabled
+      language: CSharp
+      name:
+        CSharp: IsEnabled
+        VB: IsEnabled
+      nameWithType:
+        CSharp: GazeInteractable.IsEnabled
+        VB: GazeInteractable.IsEnabled
+      qualifiedName:
+        CSharp: TS.GazeInteraction.GazeInteractable.IsEnabled
+        VB: TS.GazeInteraction.GazeInteractable.IsEnabled
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: TS.GazeInteraction
+      source:
+        id: IsEnabled
+        path: ''
+        startLine: 41
+      syntax:
+        content:
+          CSharp: public bool IsEnabled { get; set; }
+          VB: Public Property IsEnabled As Boolean
+        parameters: []
+        return:
+          type: System.Boolean
+      overload: TS.GazeInteraction.GazeInteractable.IsEnabled*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        - set
+        VB:
+        - Public
+    - id: TS.GazeInteraction.GazeInteractable.IsActivable
+      commentId: P:TS.GazeInteraction.GazeInteractable.IsActivable
+      language: CSharp
+      name:
+        CSharp: IsActivable
+        VB: IsActivable
+      nameWithType:
+        CSharp: GazeInteractable.IsActivable
+        VB: GazeInteractable.IsActivable
+      qualifiedName:
+        CSharp: TS.GazeInteraction.GazeInteractable.IsActivable
+        VB: TS.GazeInteraction.GazeInteractable.IsActivable
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: TS.GazeInteraction
+      source:
+        id: IsActivable
+        path: ''
+        startLine: 46
+      syntax:
+        content:
+          CSharp: public bool IsActivable { get; }
+          VB: Public ReadOnly Property IsActivable As Boolean
+        parameters: []
+        return:
+          type: System.Boolean
+      overload: TS.GazeInteraction.GazeInteractable.IsActivable*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: TS.GazeInteraction.GazeInteractable.IsActivated
+      commentId: P:TS.GazeInteraction.GazeInteractable.IsActivated
+      language: CSharp
+      name:
+        CSharp: IsActivated
+        VB: IsActivated
+      nameWithType:
+        CSharp: GazeInteractable.IsActivated
+        VB: GazeInteractable.IsActivated
+      qualifiedName:
+        CSharp: TS.GazeInteraction.GazeInteractable.IsActivated
+        VB: TS.GazeInteraction.GazeInteractable.IsActivated
+      type: Property
+      assemblies:
+      - cs.temp.dll
+      namespace: TS.GazeInteraction
+      source:
+        id: IsActivated
+        path: ''
+        startLine: 50
+      syntax:
+        content:
+          CSharp: public bool IsActivated { get; }
+          VB: Public ReadOnly Property IsActivated As Boolean
+        parameters: []
+        return:
+          type: System.Boolean
+      overload: TS.GazeInteraction.GazeInteractable.IsActivated*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: TS.GazeInteraction.GazeInteractable.Enable(System.Boolean)
+      commentId: M:TS.GazeInteraction.GazeInteractable.Enable(System.Boolean)
+      language: CSharp
+      name:
+        CSharp: Enable(Boolean)
+        VB: Enable(Boolean)
+      nameWithType:
+        CSharp: GazeInteractable.Enable(Boolean)
+        VB: GazeInteractable.Enable(Boolean)
+      qualifiedName:
+        CSharp: TS.GazeInteraction.GazeInteractable.Enable(System.Boolean)
+        VB: TS.GazeInteraction.GazeInteractable.Enable(System.Boolean)
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: TS.GazeInteraction
+      source:
+        id: Enable
+        path: ''
+        startLine: 73
+      summary: "\nToggles the GameObject.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public void Enable(bool enable)
+          VB: Public Sub Enable(enable As Boolean)
+        parameters:
+        - id: enable
+          type: System.Boolean
+          description: ''
+      overload: TS.GazeInteraction.GazeInteractable.Enable*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: TS.GazeInteraction.GazeInteractable.Activate
+      commentId: M:TS.GazeInteraction.GazeInteractable.Activate
+      language: CSharp
+      name:
+        CSharp: Activate()
+        VB: Activate()
+      nameWithType:
+        CSharp: GazeInteractable.Activate()
+        VB: GazeInteractable.Activate()
+      qualifiedName:
+        CSharp: TS.GazeInteraction.GazeInteractable.Activate()
+        VB: TS.GazeInteraction.GazeInteractable.Activate()
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: TS.GazeInteraction
+      source:
+        id: Activate
+        path: ''
+        startLine: 81
+      summary: "\nInvokes the Activated events.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public void Activate()
+          VB: Public Sub Activate
+      overload: TS.GazeInteraction.GazeInteractable.Activate*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: TS.GazeInteraction.GazeInteractable.GazeEnter(TS.GazeInteraction.GazeInteractor,Vector3)
+      commentId: M:TS.GazeInteraction.GazeInteractable.GazeEnter(TS.GazeInteraction.GazeInteractor,Vector3)
+      language: CSharp
+      name:
+        CSharp: GazeEnter(GazeInteractor, Vector3)
+        VB: GazeEnter(GazeInteractor, Vector3)
+      nameWithType:
+        CSharp: GazeInteractable.GazeEnter(GazeInteractor, Vector3)
+        VB: GazeInteractable.GazeEnter(GazeInteractor, Vector3)
+      qualifiedName:
+        CSharp: TS.GazeInteraction.GazeInteractable.GazeEnter(TS.GazeInteraction.GazeInteractor, Vector3)
+        VB: TS.GazeInteraction.GazeInteractable.GazeEnter(TS.GazeInteraction.GazeInteractor, Vector3)
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: TS.GazeInteraction
+      source:
+        id: GazeEnter
+        path: ''
+        startLine: 95
+      summary: "\nCalled by the GazeInteractor when the gaze enters this Interactable.\nInvokes the Enter events.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public void GazeEnter(GazeInteractor interactor, Vector3 point)
+          VB: Public Sub GazeEnter(interactor As GazeInteractor, point As Vector3)
+        parameters:
+        - id: interactor
+          type: TS.GazeInteraction.GazeInteractor
+          description: ''
+        - id: point
+          type: Vector3
+          description: ''
+      overload: TS.GazeInteraction.GazeInteractable.GazeEnter*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: TS.GazeInteraction.GazeInteractable.GazeStay(TS.GazeInteraction.GazeInteractor,Vector3)
+      commentId: M:TS.GazeInteraction.GazeInteractable.GazeStay(TS.GazeInteraction.GazeInteractor,Vector3)
+      language: CSharp
+      name:
+        CSharp: GazeStay(GazeInteractor, Vector3)
+        VB: GazeStay(GazeInteractor, Vector3)
+      nameWithType:
+        CSharp: GazeInteractable.GazeStay(GazeInteractor, Vector3)
+        VB: GazeInteractable.GazeStay(GazeInteractor, Vector3)
+      qualifiedName:
+        CSharp: TS.GazeInteraction.GazeInteractable.GazeStay(TS.GazeInteraction.GazeInteractor, Vector3)
+        VB: TS.GazeInteraction.GazeInteractable.GazeStay(TS.GazeInteraction.GazeInteractor, Vector3)
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: TS.GazeInteraction
+      source:
+        id: GazeStay
+        path: ''
+        startLine: 110
+      summary: "\nCalled by the GazeInteractor while the gaze stays on top of this Interactable.\nInvokes the Stay events.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public void GazeStay(GazeInteractor interactor, Vector3 point)
+          VB: Public Sub GazeStay(interactor As GazeInteractor, point As Vector3)
+        parameters:
+        - id: interactor
+          type: TS.GazeInteraction.GazeInteractor
+          description: ''
+        - id: point
+          type: Vector3
+          description: ''
+      overload: TS.GazeInteraction.GazeInteractable.GazeStay*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: TS.GazeInteraction.GazeInteractable.GazeExit(TS.GazeInteraction.GazeInteractor)
+      commentId: M:TS.GazeInteraction.GazeInteractable.GazeExit(TS.GazeInteraction.GazeInteractor)
+      language: CSharp
+      name:
+        CSharp: GazeExit(GazeInteractor)
+        VB: GazeExit(GazeInteractor)
+      nameWithType:
+        CSharp: GazeInteractable.GazeExit(GazeInteractor)
+        VB: GazeInteractable.GazeExit(GazeInteractor)
+      qualifiedName:
+        CSharp: TS.GazeInteraction.GazeInteractable.GazeExit(TS.GazeInteraction.GazeInteractor)
+        VB: TS.GazeInteraction.GazeInteractable.GazeExit(TS.GazeInteraction.GazeInteractor)
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: TS.GazeInteraction
+      source:
+        id: GazeExit
+        path: ''
+        startLine: 121
+      summary: "\nCalled by the GazeInteractor when the gaze exits this Interactable.\nInvokes the Exit events.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public void GazeExit(GazeInteractor interactor)
+          VB: Public Sub GazeExit(interactor As GazeInteractor)
+        parameters:
+        - id: interactor
+          type: TS.GazeInteraction.GazeInteractor
+          description: ''
+      overload: TS.GazeInteraction.GazeInteractable.GazeExit*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+  - id: TS.GazeInteraction.GazeInteractable.OnEnter
+    commentId: T:TS.GazeInteraction.GazeInteractable.OnEnter
+    language: CSharp
+    name:
+      CSharp: GazeInteractable.OnEnter
+      VB: GazeInteractable.OnEnter
+    nameWithType:
+      CSharp: GazeInteractable.OnEnter
+      VB: GazeInteractable.OnEnter
+    qualifiedName:
+      CSharp: TS.GazeInteraction.GazeInteractable.OnEnter
+      VB: TS.GazeInteraction.GazeInteractable.OnEnter
+    type: Delegate
+    assemblies:
+    - cs.temp.dll
+    namespace: TS.GazeInteraction
+    source:
+      id: OnEnter
+      path: ''
+      startLine: 18
+    syntax:
+      content:
+        CSharp: public delegate void OnEnter(GazeInteractable interactable, GazeInteractor interactor, Vector3 point);
+        VB: Public Delegate Sub OnEnter(interactable As GazeInteractable, interactor As GazeInteractor, point As Vector3)
+      parameters:
+      - id: interactable
+        type: TS.GazeInteraction.GazeInteractable
+      - id: interactor
+        type: TS.GazeInteraction.GazeInteractor
+      - id: point
+        type: Vector3
+    modifiers:
+      CSharp:
+      - public
+      - delegate
+      VB:
+      - Public
+      - Delegate
+    items: []
+  - id: TS.GazeInteraction.GazeInteractable.OnStay
+    commentId: T:TS.GazeInteraction.GazeInteractable.OnStay
+    language: CSharp
+    name:
+      CSharp: GazeInteractable.OnStay
+      VB: GazeInteractable.OnStay
+    nameWithType:
+      CSharp: GazeInteractable.OnStay
+      VB: GazeInteractable.OnStay
+    qualifiedName:
+      CSharp: TS.GazeInteraction.GazeInteractable.OnStay
+      VB: TS.GazeInteraction.GazeInteractable.OnStay
+    type: Delegate
+    assemblies:
+    - cs.temp.dll
+    namespace: TS.GazeInteraction
+    source:
+      id: OnStay
+      path: ''
+      startLine: 21
+    syntax:
+      content:
+        CSharp: public delegate void OnStay(GazeInteractable interactable, GazeInteractor interactor, Vector3 point);
+        VB: Public Delegate Sub OnStay(interactable As GazeInteractable, interactor As GazeInteractor, point As Vector3)
+      parameters:
+      - id: interactable
+        type: TS.GazeInteraction.GazeInteractable
+      - id: interactor
+        type: TS.GazeInteraction.GazeInteractor
+      - id: point
+        type: Vector3
+    modifiers:
+      CSharp:
+      - public
+      - delegate
+      VB:
+      - Public
+      - Delegate
+    items: []
+  - id: TS.GazeInteraction.GazeInteractable.OnExit
+    commentId: T:TS.GazeInteraction.GazeInteractable.OnExit
+    language: CSharp
+    name:
+      CSharp: GazeInteractable.OnExit
+      VB: GazeInteractable.OnExit
+    nameWithType:
+      CSharp: GazeInteractable.OnExit
+      VB: GazeInteractable.OnExit
+    qualifiedName:
+      CSharp: TS.GazeInteraction.GazeInteractable.OnExit
+      VB: TS.GazeInteraction.GazeInteractable.OnExit
+    type: Delegate
+    assemblies:
+    - cs.temp.dll
+    namespace: TS.GazeInteraction
+    source:
+      id: OnExit
+      path: ''
+      startLine: 24
+    syntax:
+      content:
+        CSharp: public delegate void OnExit(GazeInteractable interactable, GazeInteractor interactor);
+        VB: Public Delegate Sub OnExit(interactable As GazeInteractable, interactor As GazeInteractor)
+      parameters:
+      - id: interactable
+        type: TS.GazeInteraction.GazeInteractable
+      - id: interactor
+        type: TS.GazeInteraction.GazeInteractor
+    modifiers:
+      CSharp:
+      - public
+      - delegate
+      VB:
+      - Public
+      - Delegate
+    items: []
+  - id: TS.GazeInteraction.GazeInteractable.OnActivated
+    commentId: T:TS.GazeInteraction.GazeInteractable.OnActivated
+    language: CSharp
+    name:
+      CSharp: GazeInteractable.OnActivated
+      VB: GazeInteractable.OnActivated
+    nameWithType:
+      CSharp: GazeInteractable.OnActivated
+      VB: GazeInteractable.OnActivated
+    qualifiedName:
+      CSharp: TS.GazeInteraction.GazeInteractable.OnActivated
+      VB: TS.GazeInteraction.GazeInteractable.OnActivated
+    type: Delegate
+    assemblies:
+    - cs.temp.dll
+    namespace: TS.GazeInteraction
+    source:
+      id: OnActivated
+      path: ''
+      startLine: 27
+    syntax:
+      content:
+        CSharp: public delegate void OnActivated(GazeInteractable interactable);
+        VB: Public Delegate Sub OnActivated(interactable As GazeInteractable)
+      parameters:
+      - id: interactable
+        type: TS.GazeInteraction.GazeInteractable
+    modifiers:
+      CSharp:
+      - public
+      - delegate
+      VB:
+      - Public
+      - Delegate
+    items: []
+  - id: TS.GazeInteraction.GazeInteractor
+    commentId: T:TS.GazeInteraction.GazeInteractor
+    language: CSharp
+    name:
+      CSharp: GazeInteractor
+      VB: GazeInteractor
+    nameWithType:
+      CSharp: GazeInteractor
+      VB: GazeInteractor
+    qualifiedName:
+      CSharp: TS.GazeInteraction.GazeInteractor
+      VB: TS.GazeInteraction.GazeInteractor
+    type: Class
+    assemblies:
+    - cs.temp.dll
+    namespace: TS.GazeInteraction
+    source:
+      id: GazeInteractor
+      path: ''
+      startLine: 160
+    summary: "\nComponent responsible for managing the gaze interaction.\n"
+    example: []
+    syntax:
+      content:
+        CSharp: 'public class GazeInteractor : MonoBehaviour'
+        VB: >-
+          Public Class GazeInteractor
+
+              Inherits MonoBehaviour
+    inheritance:
+    - System.Object
+    modifiers:
+      CSharp:
+      - public
+      - class
+      VB:
+      - Public
+      - Class
+    items: []
+  - id: TS.GazeInteraction.GazeReticle
+    commentId: T:TS.GazeInteraction.GazeReticle
+    language: CSharp
+    name:
+      CSharp: GazeReticle
+      VB: GazeReticle
+    nameWithType:
+      CSharp: GazeReticle
+      VB: GazeReticle
+    qualifiedName:
+      CSharp: TS.GazeInteraction.GazeReticle
+      VB: TS.GazeInteraction.GazeReticle
+    type: Class
+    assemblies:
+    - cs.temp.dll
+    namespace: TS.GazeInteraction
+    source:
+      id: GazeReticle
+      path: ''
+      startLine: 281
+    summary: "\nVisual representation of the point of interaction.\n"
+    example: []
+    syntax:
+      content:
+        CSharp: 'public class GazeReticle : MonoBehaviour'
+        VB: >-
+          Public Class GazeReticle
+
+              Inherits MonoBehaviour
+    inheritance:
+    - System.Object
+    modifiers:
+      CSharp:
+      - public
+      - class
+      VB:
+      - Public
+      - Class
+    items:
+    - id: TS.GazeInteraction.GazeReticle.SetInteractor(TS.GazeInteraction.GazeInteractor)
+      commentId: M:TS.GazeInteraction.GazeReticle.SetInteractor(TS.GazeInteraction.GazeInteractor)
+      language: CSharp
+      name:
+        CSharp: SetInteractor(GazeInteractor)
+        VB: SetInteractor(GazeInteractor)
+      nameWithType:
+        CSharp: GazeReticle.SetInteractor(GazeInteractor)
+        VB: GazeReticle.SetInteractor(GazeInteractor)
+      qualifiedName:
+        CSharp: TS.GazeInteraction.GazeReticle.SetInteractor(TS.GazeInteraction.GazeInteractor)
+        VB: TS.GazeInteraction.GazeReticle.SetInteractor(TS.GazeInteraction.GazeInteractor)
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: TS.GazeInteraction
+      source:
+        id: SetInteractor
+        path: ''
+        startLine: 315
+      summary: "\nAssigns the GazeInteractor using this reticle.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public void SetInteractor(GazeInteractor interactor)
+          VB: Public Sub SetInteractor(interactor As GazeInteractor)
+        parameters:
+        - id: interactor
+          type: TS.GazeInteraction.GazeInteractor
+          description: ''
+      overload: TS.GazeInteraction.GazeReticle.SetInteractor*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: TS.GazeInteraction.GazeReticle.Enable(System.Boolean)
+      commentId: M:TS.GazeInteraction.GazeReticle.Enable(System.Boolean)
+      language: CSharp
+      name:
+        CSharp: Enable(Boolean)
+        VB: Enable(Boolean)
+      nameWithType:
+        CSharp: GazeReticle.Enable(Boolean)
+        VB: GazeReticle.Enable(Boolean)
+      qualifiedName:
+        CSharp: TS.GazeInteraction.GazeReticle.Enable(System.Boolean)
+        VB: TS.GazeInteraction.GazeReticle.Enable(System.Boolean)
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: TS.GazeInteraction
+      source:
+        id: Enable
+        path: ''
+        startLine: 325
+      summary: "\nToggles the GameObject.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public void Enable(bool enable)
+          VB: Public Sub Enable(enable As Boolean)
+        parameters:
+        - id: enable
+          type: System.Boolean
+          description: ''
+      overload: TS.GazeInteraction.GazeReticle.Enable*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: TS.GazeInteraction.GazeReticle.SetTarget(RaycastHit)
+      commentId: M:TS.GazeInteraction.GazeReticle.SetTarget(RaycastHit)
+      language: CSharp
+      name:
+        CSharp: SetTarget(RaycastHit)
+        VB: SetTarget(RaycastHit)
+      nameWithType:
+        CSharp: GazeReticle.SetTarget(RaycastHit)
+        VB: GazeReticle.SetTarget(RaycastHit)
+      qualifiedName:
+        CSharp: TS.GazeInteraction.GazeReticle.SetTarget(RaycastHit)
+        VB: TS.GazeInteraction.GazeReticle.SetTarget(RaycastHit)
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: TS.GazeInteraction
+      source:
+        id: SetTarget
+        path: ''
+        startLine: 334
+      summary: "\nAssigns the current hit point to adjust the reticle position and rotation.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public void SetTarget(RaycastHit hit)
+          VB: Public Sub SetTarget(hit As RaycastHit)
+        parameters:
+        - id: hit
+          type: RaycastHit
+          description: ''
+      overload: TS.GazeInteraction.GazeReticle.SetTarget*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: TS.GazeInteraction.GazeReticle.SetProgress(System.Single)
+      commentId: M:TS.GazeInteraction.GazeReticle.SetProgress(System.Single)
+      language: CSharp
+      name:
+        CSharp: SetProgress(Single)
+        VB: SetProgress(Single)
+      nameWithType:
+        CSharp: GazeReticle.SetProgress(Single)
+        VB: GazeReticle.SetProgress(Single)
+      qualifiedName:
+        CSharp: TS.GazeInteraction.GazeReticle.SetProgress(System.Single)
+        VB: TS.GazeInteraction.GazeReticle.SetProgress(System.Single)
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: TS.GazeInteraction
+      source:
+        id: SetProgress
+        path: ''
+        startLine: 347
+      summary: "\nUpdates the progress visual indicator.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public void SetProgress(float progress)
+          VB: Public Sub SetProgress(progress As Single)
+        parameters:
+        - id: progress
+          type: System.Single
+          description: ''
+      overload: TS.GazeInteraction.GazeReticle.SetProgress*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+  - id: TS.GazeInteraction.ResourcesManager
+    commentId: T:TS.GazeInteraction.ResourcesManager
+    language: CSharp
+    name:
+      CSharp: ResourcesManager
+      VB: ResourcesManager
+    nameWithType:
+      CSharp: ResourcesManager
+      VB: ResourcesManager
+    qualifiedName:
+      CSharp: TS.GazeInteraction.ResourcesManager
+      VB: TS.GazeInteraction.ResourcesManager
+    type: Class
+    assemblies:
+    - cs.temp.dll
+    namespace: TS.GazeInteraction
+    source:
+      id: ResourcesManager
+      path: ''
+      startLine: 383
+    summary: "\nLoads assets from the Resources directory.\n"
+    example: []
+    syntax:
+      content:
+        CSharp: 'public class ResourcesManager : MonoBehaviour'
+        VB: >-
+          Public Class ResourcesManager
+
+              Inherits MonoBehaviour
+    inheritance:
+    - System.Object
+    modifiers:
+      CSharp:
+      - public
+      - class
+      VB:
+      - Public
+      - Class
+    items:
+    - id: TS.GazeInteraction.ResourcesManager.FILE_PREFAB_RETICLE
+      commentId: F:TS.GazeInteraction.ResourcesManager.FILE_PREFAB_RETICLE
+      language: CSharp
+      name:
+        CSharp: FILE_PREFAB_RETICLE
+        VB: FILE_PREFAB_RETICLE
+      nameWithType:
+        CSharp: ResourcesManager.FILE_PREFAB_RETICLE
+        VB: ResourcesManager.FILE_PREFAB_RETICLE
+      qualifiedName:
+        CSharp: TS.GazeInteraction.ResourcesManager.FILE_PREFAB_RETICLE
+        VB: TS.GazeInteraction.ResourcesManager.FILE_PREFAB_RETICLE
+      type: Field
+      assemblies:
+      - cs.temp.dll
+      namespace: TS.GazeInteraction
+      source:
+        id: FILE_PREFAB_RETICLE
+        path: ''
+        startLine: 389
+      syntax:
+        content:
+          CSharp: public const string FILE_PREFAB_RETICLE = "gaze_reticle"
+          VB: Public Const FILE_PREFAB_RETICLE As String = "gaze_reticle"
+        return:
+          type: System.String
+      modifiers:
+        CSharp:
+        - public
+        - const
+        VB:
+        - Public
+        - Const
+    - id: TS.GazeInteraction.ResourcesManager.GetPrefab(System.String)
+      commentId: M:TS.GazeInteraction.ResourcesManager.GetPrefab(System.String)
+      language: CSharp
+      name:
+        CSharp: GetPrefab(String)
+        VB: GetPrefab(String)
+      nameWithType:
+        CSharp: ResourcesManager.GetPrefab(String)
+        VB: ResourcesManager.GetPrefab(String)
+      qualifiedName:
+        CSharp: TS.GazeInteraction.ResourcesManager.GetPrefab(System.String)
+        VB: TS.GazeInteraction.ResourcesManager.GetPrefab(System.String)
+      type: Method
+      assemblies:
+      - cs.temp.dll
+      namespace: TS.GazeInteraction
+      source:
+        id: GetPrefab
+        path: ''
+        startLine: 398
+      summary: "\nLoads and returns the asset specified in file from the Resources directory.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static GameObject GetPrefab(string file)
+          VB: Public Shared Function GetPrefab(file As String) As GameObject
+        parameters:
+        - id: file
+          type: System.String
+          description: Name of the asset to load. Use one of the constants.
+        return:
+          type: GameObject
+          description: Returns the loaded GameObject.
+      overload: TS.GazeInteraction.ResourcesManager.GetPrefab*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+references:
+  TS.GazeInteraction:
+    name:
+      CSharp:
+      - name: TS.GazeInteraction
+        nameWithType: TS.GazeInteraction
+        qualifiedName: TS.GazeInteraction
+      VB:
+      - name: TS.GazeInteraction
+        nameWithType: TS.GazeInteraction
+        qualifiedName: TS.GazeInteraction
+    isDefinition: true
+    commentId: N:TS.GazeInteraction
+  TS.GazeInteraction.GazeInteractable.OnEnter:
+    name:
+      CSharp:
+      - id: TS.GazeInteraction.GazeInteractable.OnEnter
+        name: GazeInteractable.OnEnter
+        nameWithType: GazeInteractable.OnEnter
+        qualifiedName: TS.GazeInteraction.GazeInteractable.OnEnter
+      VB:
+      - id: TS.GazeInteraction.GazeInteractable.OnEnter
+        name: GazeInteractable.OnEnter
+        nameWithType: GazeInteractable.OnEnter
+        qualifiedName: TS.GazeInteraction.GazeInteractable.OnEnter
+    isDefinition: true
+    parent: TS.GazeInteraction
+    commentId: T:TS.GazeInteraction.GazeInteractable.OnEnter
+  TS.GazeInteraction.GazeInteractable.OnStay:
+    name:
+      CSharp:
+      - id: TS.GazeInteraction.GazeInteractable.OnStay
+        name: GazeInteractable.OnStay
+        nameWithType: GazeInteractable.OnStay
+        qualifiedName: TS.GazeInteraction.GazeInteractable.OnStay
+      VB:
+      - id: TS.GazeInteraction.GazeInteractable.OnStay
+        name: GazeInteractable.OnStay
+        nameWithType: GazeInteractable.OnStay
+        qualifiedName: TS.GazeInteraction.GazeInteractable.OnStay
+    isDefinition: true
+    parent: TS.GazeInteraction
+    commentId: T:TS.GazeInteraction.GazeInteractable.OnStay
+  TS.GazeInteraction.GazeInteractable.OnExit:
+    name:
+      CSharp:
+      - id: TS.GazeInteraction.GazeInteractable.OnExit
+        name: GazeInteractable.OnExit
+        nameWithType: GazeInteractable.OnExit
+        qualifiedName: TS.GazeInteraction.GazeInteractable.OnExit
+      VB:
+      - id: TS.GazeInteraction.GazeInteractable.OnExit
+        name: GazeInteractable.OnExit
+        nameWithType: GazeInteractable.OnExit
+        qualifiedName: TS.GazeInteraction.GazeInteractable.OnExit
+    isDefinition: true
+    parent: TS.GazeInteraction
+    commentId: T:TS.GazeInteraction.GazeInteractable.OnExit
+  TS.GazeInteraction.GazeInteractable.OnActivated:
+    name:
+      CSharp:
+      - id: TS.GazeInteraction.GazeInteractable.OnActivated
+        name: GazeInteractable.OnActivated
+        nameWithType: GazeInteractable.OnActivated
+        qualifiedName: TS.GazeInteraction.GazeInteractable.OnActivated
+      VB:
+      - id: TS.GazeInteraction.GazeInteractable.OnActivated
+        name: GazeInteractable.OnActivated
+        nameWithType: GazeInteractable.OnActivated
+        qualifiedName: TS.GazeInteraction.GazeInteractable.OnActivated
+    isDefinition: true
+    parent: TS.GazeInteraction
+    commentId: T:TS.GazeInteraction.GazeInteractable.OnActivated
+  UnityEvent:
+    name:
+      CSharp:
+      - id: UnityEvent
+        name: UnityEvent
+        nameWithType: UnityEvent
+        qualifiedName: UnityEvent
+        isExternal: true
+      VB:
+      - id: UnityEvent
+        name: UnityEvent
+        nameWithType: UnityEvent
+        qualifiedName: UnityEvent
+        isExternal: true
+    isDefinition: true
+  UnityEvent`1:
+    name:
+      CSharp:
+      - id: UnityEvent`1
+        name: UnityEvent
+        nameWithType: UnityEvent
+        qualifiedName: UnityEvent
+        isExternal: true
+      - name: <
+        nameWithType: <
+        qualifiedName: <
+      - name: ''
+        nameWithType: ''
+        qualifiedName: ''
+      - name: '>'
+        nameWithType: '>'
+        qualifiedName: '>'
+      VB:
+      - id: UnityEvent`1
+        name: UnityEvent
+        nameWithType: UnityEvent
+        qualifiedName: UnityEvent
+        isExternal: true
+      - name: '(Of '
+        nameWithType: '(Of '
+        qualifiedName: '(Of '
+      - name: ''
+        nameWithType: ''
+        qualifiedName: ''
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    commentId: '!:UnityEvent`1'
+  UnityEvent{System.Boolean}:
+    name:
+      CSharp:
+      - id: UnityEvent`1
+        name: UnityEvent
+        nameWithType: UnityEvent
+        qualifiedName: UnityEvent
+        isExternal: true
+      - name: <
+        nameWithType: <
+        qualifiedName: <
+      - id: System.Boolean
+        name: Boolean
+        nameWithType: Boolean
+        qualifiedName: System.Boolean
+        isExternal: true
+      - name: '>'
+        nameWithType: '>'
+        qualifiedName: '>'
+      VB:
+      - id: UnityEvent`1
+        name: UnityEvent
+        nameWithType: UnityEvent
+        qualifiedName: UnityEvent
+        isExternal: true
+      - name: '(Of '
+        nameWithType: '(Of '
+        qualifiedName: '(Of '
+      - id: System.Boolean
+        name: Boolean
+        nameWithType: Boolean
+        qualifiedName: System.Boolean
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: false
+    definition: UnityEvent`1
+    commentId: '!:UnityEvent{System.Boolean}'
+  System:
+    name:
+      CSharp:
+      - name: System
+        nameWithType: System
+        qualifiedName: System
+        isExternal: true
+      VB:
+      - name: System
+        nameWithType: System
+        qualifiedName: System
+    isDefinition: true
+    commentId: N:System
+  System.Boolean:
+    name:
+      CSharp:
+      - id: System.Boolean
+        name: Boolean
+        nameWithType: Boolean
+        qualifiedName: System.Boolean
+        isExternal: true
+      VB:
+      - id: System.Boolean
+        name: Boolean
+        nameWithType: Boolean
+        qualifiedName: System.Boolean
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.Boolean
+  TS.GazeInteraction.GazeInteractable.IsEnabled*:
+    name:
+      CSharp:
+      - id: TS.GazeInteraction.GazeInteractable.IsEnabled*
+        name: IsEnabled
+        nameWithType: GazeInteractable.IsEnabled
+        qualifiedName: TS.GazeInteraction.GazeInteractable.IsEnabled
+      VB:
+      - id: TS.GazeInteraction.GazeInteractable.IsEnabled*
+        name: IsEnabled
+        nameWithType: GazeInteractable.IsEnabled
+        qualifiedName: TS.GazeInteraction.GazeInteractable.IsEnabled
+    isDefinition: true
+    commentId: Overload:TS.GazeInteraction.GazeInteractable.IsEnabled
+  TS.GazeInteraction.GazeInteractable.IsActivable*:
+    name:
+      CSharp:
+      - id: TS.GazeInteraction.GazeInteractable.IsActivable*
+        name: IsActivable
+        nameWithType: GazeInteractable.IsActivable
+        qualifiedName: TS.GazeInteraction.GazeInteractable.IsActivable
+      VB:
+      - id: TS.GazeInteraction.GazeInteractable.IsActivable*
+        name: IsActivable
+        nameWithType: GazeInteractable.IsActivable
+        qualifiedName: TS.GazeInteraction.GazeInteractable.IsActivable
+    isDefinition: true
+    commentId: Overload:TS.GazeInteraction.GazeInteractable.IsActivable
+  TS.GazeInteraction.GazeInteractable.IsActivated*:
+    name:
+      CSharp:
+      - id: TS.GazeInteraction.GazeInteractable.IsActivated*
+        name: IsActivated
+        nameWithType: GazeInteractable.IsActivated
+        qualifiedName: TS.GazeInteraction.GazeInteractable.IsActivated
+      VB:
+      - id: TS.GazeInteraction.GazeInteractable.IsActivated*
+        name: IsActivated
+        nameWithType: GazeInteractable.IsActivated
+        qualifiedName: TS.GazeInteraction.GazeInteractable.IsActivated
+    isDefinition: true
+    commentId: Overload:TS.GazeInteraction.GazeInteractable.IsActivated
+  TS.GazeInteraction.GazeInteractable.Enable*:
+    name:
+      CSharp:
+      - id: TS.GazeInteraction.GazeInteractable.Enable*
+        name: Enable
+        nameWithType: GazeInteractable.Enable
+        qualifiedName: TS.GazeInteraction.GazeInteractable.Enable
+      VB:
+      - id: TS.GazeInteraction.GazeInteractable.Enable*
+        name: Enable
+        nameWithType: GazeInteractable.Enable
+        qualifiedName: TS.GazeInteraction.GazeInteractable.Enable
+    isDefinition: true
+    commentId: Overload:TS.GazeInteraction.GazeInteractable.Enable
+  TS.GazeInteraction.GazeInteractable.Activate*:
+    name:
+      CSharp:
+      - id: TS.GazeInteraction.GazeInteractable.Activate*
+        name: Activate
+        nameWithType: GazeInteractable.Activate
+        qualifiedName: TS.GazeInteraction.GazeInteractable.Activate
+      VB:
+      - id: TS.GazeInteraction.GazeInteractable.Activate*
+        name: Activate
+        nameWithType: GazeInteractable.Activate
+        qualifiedName: TS.GazeInteraction.GazeInteractable.Activate
+    isDefinition: true
+    commentId: Overload:TS.GazeInteraction.GazeInteractable.Activate
+  TS.GazeInteraction.GazeInteractor:
+    name:
+      CSharp:
+      - id: TS.GazeInteraction.GazeInteractor
+        name: GazeInteractor
+        nameWithType: GazeInteractor
+        qualifiedName: TS.GazeInteraction.GazeInteractor
+      VB:
+      - id: TS.GazeInteraction.GazeInteractor
+        name: GazeInteractor
+        nameWithType: GazeInteractor
+        qualifiedName: TS.GazeInteraction.GazeInteractor
+    isDefinition: true
+    parent: TS.GazeInteraction
+    commentId: T:TS.GazeInteraction.GazeInteractor
+  Vector3:
+    name:
+      CSharp:
+      - id: Vector3
+        name: Vector3
+        nameWithType: Vector3
+        qualifiedName: Vector3
+        isExternal: true
+      VB:
+      - id: Vector3
+        name: Vector3
+        nameWithType: Vector3
+        qualifiedName: Vector3
+        isExternal: true
+    isDefinition: true
+  TS.GazeInteraction.GazeInteractable.GazeEnter*:
+    name:
+      CSharp:
+      - id: TS.GazeInteraction.GazeInteractable.GazeEnter*
+        name: GazeEnter
+        nameWithType: GazeInteractable.GazeEnter
+        qualifiedName: TS.GazeInteraction.GazeInteractable.GazeEnter
+      VB:
+      - id: TS.GazeInteraction.GazeInteractable.GazeEnter*
+        name: GazeEnter
+        nameWithType: GazeInteractable.GazeEnter
+        qualifiedName: TS.GazeInteraction.GazeInteractable.GazeEnter
+    isDefinition: true
+    commentId: Overload:TS.GazeInteraction.GazeInteractable.GazeEnter
+  TS.GazeInteraction.GazeInteractable.GazeStay*:
+    name:
+      CSharp:
+      - id: TS.GazeInteraction.GazeInteractable.GazeStay*
+        name: GazeStay
+        nameWithType: GazeInteractable.GazeStay
+        qualifiedName: TS.GazeInteraction.GazeInteractable.GazeStay
+      VB:
+      - id: TS.GazeInteraction.GazeInteractable.GazeStay*
+        name: GazeStay
+        nameWithType: GazeInteractable.GazeStay
+        qualifiedName: TS.GazeInteraction.GazeInteractable.GazeStay
+    isDefinition: true
+    commentId: Overload:TS.GazeInteraction.GazeInteractable.GazeStay
+  TS.GazeInteraction.GazeInteractable.GazeExit*:
+    name:
+      CSharp:
+      - id: TS.GazeInteraction.GazeInteractable.GazeExit*
+        name: GazeExit
+        nameWithType: GazeInteractable.GazeExit
+        qualifiedName: TS.GazeInteraction.GazeInteractable.GazeExit
+      VB:
+      - id: TS.GazeInteraction.GazeInteractable.GazeExit*
+        name: GazeExit
+        nameWithType: GazeInteractable.GazeExit
+        qualifiedName: TS.GazeInteraction.GazeInteractable.GazeExit
+    isDefinition: true
+    commentId: Overload:TS.GazeInteraction.GazeInteractable.GazeExit
+  TS.GazeInteraction.GazeInteractable:
+    name:
+      CSharp:
+      - id: TS.GazeInteraction.GazeInteractable
+        name: GazeInteractable
+        nameWithType: GazeInteractable
+        qualifiedName: TS.GazeInteraction.GazeInteractable
+      VB:
+      - id: TS.GazeInteraction.GazeInteractable
+        name: GazeInteractable
+        nameWithType: GazeInteractable
+        qualifiedName: TS.GazeInteraction.GazeInteractable
+    isDefinition: true
+    parent: TS.GazeInteraction
+    commentId: T:TS.GazeInteraction.GazeInteractable
+  TS.GazeInteraction.GazeReticle.SetInteractor*:
+    name:
+      CSharp:
+      - id: TS.GazeInteraction.GazeReticle.SetInteractor*
+        name: SetInteractor
+        nameWithType: GazeReticle.SetInteractor
+        qualifiedName: TS.GazeInteraction.GazeReticle.SetInteractor
+      VB:
+      - id: TS.GazeInteraction.GazeReticle.SetInteractor*
+        name: SetInteractor
+        nameWithType: GazeReticle.SetInteractor
+        qualifiedName: TS.GazeInteraction.GazeReticle.SetInteractor
+    isDefinition: true
+    commentId: Overload:TS.GazeInteraction.GazeReticle.SetInteractor
+  TS.GazeInteraction.GazeReticle.Enable*:
+    name:
+      CSharp:
+      - id: TS.GazeInteraction.GazeReticle.Enable*
+        name: Enable
+        nameWithType: GazeReticle.Enable
+        qualifiedName: TS.GazeInteraction.GazeReticle.Enable
+      VB:
+      - id: TS.GazeInteraction.GazeReticle.Enable*
+        name: Enable
+        nameWithType: GazeReticle.Enable
+        qualifiedName: TS.GazeInteraction.GazeReticle.Enable
+    isDefinition: true
+    commentId: Overload:TS.GazeInteraction.GazeReticle.Enable
+  RaycastHit:
+    name:
+      CSharp:
+      - id: RaycastHit
+        name: RaycastHit
+        nameWithType: RaycastHit
+        qualifiedName: RaycastHit
+        isExternal: true
+      VB:
+      - id: RaycastHit
+        name: RaycastHit
+        nameWithType: RaycastHit
+        qualifiedName: RaycastHit
+        isExternal: true
+    isDefinition: true
+    commentId: '!:RaycastHit'
+  TS.GazeInteraction.GazeReticle.SetTarget*:
+    name:
+      CSharp:
+      - id: TS.GazeInteraction.GazeReticle.SetTarget*
+        name: SetTarget
+        nameWithType: GazeReticle.SetTarget
+        qualifiedName: TS.GazeInteraction.GazeReticle.SetTarget
+      VB:
+      - id: TS.GazeInteraction.GazeReticle.SetTarget*
+        name: SetTarget
+        nameWithType: GazeReticle.SetTarget
+        qualifiedName: TS.GazeInteraction.GazeReticle.SetTarget
+    isDefinition: true
+    commentId: Overload:TS.GazeInteraction.GazeReticle.SetTarget
+  System.Single:
+    name:
+      CSharp:
+      - id: System.Single
+        name: Single
+        nameWithType: Single
+        qualifiedName: System.Single
+        isExternal: true
+      VB:
+      - id: System.Single
+        name: Single
+        nameWithType: Single
+        qualifiedName: System.Single
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.Single
+  TS.GazeInteraction.GazeReticle.SetProgress*:
+    name:
+      CSharp:
+      - id: TS.GazeInteraction.GazeReticle.SetProgress*
+        name: SetProgress
+        nameWithType: GazeReticle.SetProgress
+        qualifiedName: TS.GazeInteraction.GazeReticle.SetProgress
+      VB:
+      - id: TS.GazeInteraction.GazeReticle.SetProgress*
+        name: SetProgress
+        nameWithType: GazeReticle.SetProgress
+        qualifiedName: TS.GazeInteraction.GazeReticle.SetProgress
+    isDefinition: true
+    commentId: Overload:TS.GazeInteraction.GazeReticle.SetProgress
+  TS.GazeInteraction.GazeReticle:
+    name:
+      CSharp:
+      - id: TS.GazeInteraction.GazeReticle
+        name: GazeReticle
+        nameWithType: GazeReticle
+        qualifiedName: TS.GazeInteraction.GazeReticle
+      VB:
+      - id: TS.GazeInteraction.GazeReticle
+        name: GazeReticle
+        nameWithType: GazeReticle
+        qualifiedName: TS.GazeInteraction.GazeReticle
+    isDefinition: true
+    commentId: T:TS.GazeInteraction.GazeReticle
+  System.String:
+    name:
+      CSharp:
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      VB:
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.String
+  GameObject:
+    name:
+      CSharp:
+      - id: GameObject
+        name: GameObject
+        nameWithType: GameObject
+        qualifiedName: GameObject
+        isExternal: true
+      VB:
+      - id: GameObject
+        name: GameObject
+        nameWithType: GameObject
+        qualifiedName: GameObject
+        isExternal: true
+    isDefinition: true
+    commentId: '!:GameObject'
+  TS.GazeInteraction.ResourcesManager.GetPrefab*:
+    name:
+      CSharp:
+      - id: TS.GazeInteraction.ResourcesManager.GetPrefab*
+        name: GetPrefab
+        nameWithType: ResourcesManager.GetPrefab
+        qualifiedName: TS.GazeInteraction.ResourcesManager.GetPrefab
+      VB:
+      - id: TS.GazeInteraction.ResourcesManager.GetPrefab*
+        name: GetPrefab
+        nameWithType: ResourcesManager.GetPrefab
+        qualifiedName: TS.GazeInteraction.ResourcesManager.GetPrefab
+    isDefinition: true
+    commentId: Overload:TS.GazeInteraction.ResourcesManager.GetPrefab
+  TS.GazeInteraction.ResourcesManager:
+    name:
+      CSharp:
+      - id: TS.GazeInteraction.ResourcesManager
+        name: ResourcesManager
+        nameWithType: ResourcesManager
+        qualifiedName: TS.GazeInteraction.ResourcesManager
+      VB:
+      - id: TS.GazeInteraction.ResourcesManager
+        name: ResourcesManager
+        nameWithType: ResourcesManager
+        qualifiedName: TS.GazeInteraction.ResourcesManager
+    isDefinition: true
+    commentId: T:TS.GazeInteraction.ResourcesManager
