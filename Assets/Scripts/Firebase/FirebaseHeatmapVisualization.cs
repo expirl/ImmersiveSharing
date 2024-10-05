@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TS.GazeInteraction;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +19,7 @@ class CollectedData
 
 public class FirebaseHeatmapVisualization : MonoBehaviour
 {
+    [SerializeField] private GazeInteractor gazeInteractor;
     HeadGazeTracking headGazeTracking;
     HeadGazeHeatmap headGazeHeatmap;
 
@@ -25,7 +27,7 @@ public class FirebaseHeatmapVisualization : MonoBehaviour
     public Text collectText;
     private bool isCollecting = false;
 
-    public float collectionInterval = 1.0f; // 데이터 수집 간격 (초)
+    public float collectionInterval = 3.0f; // 데이터 수집 간격 (초)
     public int maxDataCount = 300; // 최대 저장 데이터 수
     private float timeSinceLastCollection = 0.0f;
 
@@ -87,12 +89,14 @@ public class FirebaseHeatmapVisualization : MonoBehaviour
     {
 
         // GetTextureCoord() 호출 및 null 체크
-        Vector2? textureCoord = headGazeTracking.GetTextureCoord();
+        //Vector2? textureCoord = headGazeTracking.GetTextureCoord();
+        Vector2? textureCoord = gazeInteractor.GetTextureCoord();
         if (textureCoord.HasValue)
         {
             dataX = textureCoord.Value.x;
             dataY = textureCoord.Value.y;
-            currentSavedMeshRenderer = headGazeTracking.GetMeshRenderer();
+            //currentSavedMeshRenderer = headGazeTracking.GetMeshRenderer();
+            currentSavedMeshRenderer = gazeInteractor.GetMeshRenderer();
            // MeshRenderer currentSavedMeshRenderer = headGazeTracking.GetMeshRenderer();
 
             // 데이터 처리

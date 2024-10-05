@@ -131,6 +131,24 @@ namespace TS.GazeInteraction
             }
         }
 
+        public Vector2? GetTextureCoord()
+        {
+            if (_hit.textureCoord.x != 0 && _hit.textureCoord.y != 0)
+            {
+                return new Vector2(_hit.textureCoord.x * 4 - 2, _hit.textureCoord.y * 4 - 2);
+            }
+            else
+            {
+                return null; // 데이터가 없을 경우 null 반환
+            }
+        }
+
+        public MeshRenderer GetMeshRenderer()
+        {
+            return currentMeshRenderer;
+        }
+
+
         private void Reset()
         {
             _reticle.SetProgress(0);

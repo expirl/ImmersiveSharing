@@ -1033,6 +1033,17 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &461861598 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5289182684458692542, guid: e5db301629853dd4a99835fa70099d79, type: 3}
+  m_PrefabInstance: {fileID: 461861593}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461861595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &527039735
 GameObject:
   m_ObjectHideFlags: 0
@@ -2269,6 +2280,28 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &895690622 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3356991306335605903, guid: e5db301629853dd4a99835fa70099d79, type: 3}
+  m_PrefabInstance: {fileID: 895690617}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &895690623 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5289182684458692542, guid: e5db301629853dd4a99835fa70099d79, type: 3}
+  m_PrefabInstance: {fileID: 895690617}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895690619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &905596132
 GameObject:
   m_ObjectHideFlags: 0
@@ -3558,16 +3591,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1540481437}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86bc90743ac9c8047bd60b1aa47b37c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectButton: {fileID: 0}
-  collectText: {fileID: 0}
-  collectionInterval: 1
+  gazeInteractor: {fileID: 2002071296}
+  collectButton: {fileID: 895690623}
+  collectText: {fileID: 895690622}
+  collectionInterval: 3
   maxDataCount: 300
-  showHeatMapButton: {fileID: 0}
+  showHeatMapButton: {fileID: 461861598}
 --- !u!114 &1540481440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4955,7 +4989,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4422659091188657070, guid: fd28f23af44f73f4a95e33435872ad15, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 275
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4422659091188657070, guid: fd28f23af44f73f4a95e33435872ad15, type: 3}
       propertyPath: m_AnchoredPosition.y
