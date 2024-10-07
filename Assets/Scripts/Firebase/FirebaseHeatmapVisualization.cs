@@ -144,7 +144,7 @@ public class FirebaseHeatmapVisualization : MonoBehaviour
         foreach (CollectedData data in collectedData)
         {
             // headGazeHeatmap에서 적절한 MeshRenderer에 기반한 x, y 좌표 시각화
-            headGazeHeatmap.addHitPoint(data.coords.x, data.coords.y, data.meshRenderer);
+            headGazeHeatmap.AddHitPoint(data.coords.x, data.coords.y, data.meshRenderer);
         }
     }
 }

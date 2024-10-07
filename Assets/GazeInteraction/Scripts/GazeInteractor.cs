@@ -127,9 +127,11 @@ namespace TS.GazeInteraction
         {
             if (currentMeshRenderer != null && headGazeHeatmap != null)
             {
-                headGazeHeatmap.addHitPoint(_hit.textureCoord.x * 4 - 2, _hit.textureCoord.y * 4 - 2, currentMeshRenderer);
+                 // 히트맵 좌표를 해당 오브젝트의 MeshRenderer와 함께 전달
+                 headGazeHeatmap.AddHitPoint(_hit.textureCoord.x * 4 - 2, _hit.textureCoord.y * 4 - 2, currentMeshRenderer);  
             }
         }
+
 
         public Vector2? GetTextureCoord()
         {

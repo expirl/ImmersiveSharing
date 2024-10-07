@@ -151,7 +151,7 @@ public class HeadGazeTracking : MonoBehaviour
             var meshRenderer = gazedObject.GetComponent<MeshRenderer>();
             if (meshRenderer != null)
             {
-                headGazeHeatmap.addHitPoint(hit.textureCoord.x * 4 - 2, hit.textureCoord.y * 4 - 2, meshRenderer);
+                headGazeHeatmap.AddHitPoint(hit.textureCoord.x * 4 - 2, hit.textureCoord.y * 4 - 2, meshRenderer);
                 currentMeshRenderer = meshRenderer;
             }
         }

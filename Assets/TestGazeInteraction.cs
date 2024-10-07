@@ -35,7 +35,7 @@ namespace TS.GazeInteraction
            
 
             if (currentMeshRenderer != null)
-            headGazeHeatmap.addHitPoint(currentHit.textureCoord.x * 4 - 2, currentHit.textureCoord.y * 4 - 2, currentMeshRenderer);
+            headGazeHeatmap.AddHitPoint(currentHit.textureCoord.x * 4 - 2, currentHit.textureCoord.y * 4 - 2, currentMeshRenderer);
            // currentMeshRenderer = gazedMeshRenderer;
 
         }

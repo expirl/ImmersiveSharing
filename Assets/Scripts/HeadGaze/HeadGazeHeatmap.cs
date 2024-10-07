@@ -4,29 +4,69 @@ using UnityEngine;
 
 public class HeadGazeHeatmap : MonoBehaviour
 {
-    private float[] mPoints;
-    private int mHitCount;
+    private Dictionary<MeshRenderer, HeatmapData> heatmaps = new Dictionary<MeshRenderer, HeatmapData>();
 
-    void Start()
+    private class HeatmapData
     {
-        mPoints = new float[32 * 3]; // 32 points
+        public float[] points;
+        public int hitCount;
+
+        public HeatmapData()
+        {
+            points = new float[32 * 3]; // 32 points
+            hitCount = 0;
+        }
     }
 
-    public void addHitPoint(float xp, float yp, MeshRenderer hitRenderer = null)
+
+    //void Start()
+    //{
+    //    mPoints = new float[32 * 3]; // 32 points
+    //}
+
+    public void AddHitPoint(float xp, float yp, MeshRenderer hitRenderer)
     {
-        mPoints[mHitCount * 3] = xp;
-        mPoints[mHitCount * 3 + 1] = yp;
-        mPoints[mHitCount * 3 + 2] = Random.Range(1f, 3f);
+        if (hitRenderer == null) return;
 
-        mHitCount++;
-        mHitCount %= 32;
+        if (!heatmaps.ContainsKey(hitRenderer))
+        {
+            heatmaps[hitRenderer] = new HeatmapData();
+        }
 
-        if (hitRenderer != null)
+        HeatmapData data = heatmaps[hitRenderer];
+
+        data.points[data.hitCount * 3] = xp;
+        data.points[data.hitCount * 3 + 1] = yp;
+        data.points[data.hitCount * 3 + 2] = Random.Range(1f, 3f);
+        data.hitCount++;
+        data.hitCount %= 32;
+
+        UpdateShader(hitRenderer);
+    }
+
+    private void UpdateShader(MeshRenderer hitRenderer)
+    {
+        if (heatmaps.TryGetValue(hitRenderer, out HeatmapData data))
         {
             Material hitMaterial = hitRenderer.material;
-            hitMaterial.SetFloatArray("_Hits", mPoints);
-            hitMaterial.SetInt("_HitCount", mHitCount);
-          ///  hitMaterial.SetFloat("_Radius", radius);  // 반경 값 반영
+            hitMaterial.SetFloatArray("_Hits", data.points);
+            hitMaterial.SetInt("_HitCount", data.hitCount);
+        }
+    }
+
+    public void ClearPoints(MeshRenderer hitRenderer = null)
+    {
+        if (hitRenderer != null)
+        {
+            if (heatmaps.ContainsKey(hitRenderer))
+            {
+                heatmaps[hitRenderer] = new HeatmapData();
+                UpdateShader(hitRenderer);
+            }
+        }
+        else
+        {
+            heatmaps.Clear();
         }
     }
 }
