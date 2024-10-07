@@ -156,7 +156,7 @@ public class GazeVerticesTracking : MonoBehaviour
         var meshRenderer = gazeObject.GetComponent<MeshRenderer>();
         if (meshRenderer != null)
         {
-            headGazeHeatmap.addHitPoint(xp, yp, meshRenderer, radius);
+           // headGazeHeatmap.addHitPoint(xp, yp, meshRenderer, radius);
         }
     }
 

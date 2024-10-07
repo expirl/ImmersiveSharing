@@ -4,15 +4,15 @@ Shader "Unlit/TransparentHeatMap"
     {
         _MainTex("Texture", 2D) = "white" {}
         _Radius("Radius", Float) = 1.0
-        _Transparency("Transparency", Range(0, 1)) = 1.0 // 투명도를 조절하는 프로퍼티 추가
+        _Transparency("Mesh Transparency", Range(0, 1)) = 1.0 // 메쉬의 투명도를 조절하는 프로퍼티
+        _HeatmapAlpha("Heatmap Alpha", Range(0, 1)) = 1.0 // 히트맵의 알파값을 고정하는 프로퍼티
     }
         SubShader
         {
-         //   Tags { "RenderType" = "Transparent" } // RenderType을 Transparent로 설정
             Tags { "Queue" = "Transparent" "RenderType" = "Transparent" } // RenderType과 Queue를 Transparent로 설정
             LOD 100
 
-             Blend SrcAlpha OneMinusSrcAlpha // 알파 블렌딩 설정
+            Blend SrcAlpha OneMinusSrcAlpha // 알파 블렌딩 설정
             ZWrite Off // ZWrite를 Off로 설정하여 투명한 오브젝트가 올바르게 렌더링되도록 함
 
             Pass
@@ -40,7 +40,8 @@ Shader "Unlit/TransparentHeatMap"
                 sampler2D _MainTex;
                 float4 _MainTex_ST;
                 float _Radius;
-                float _Transparency; // 투명도를 조절하는 프로퍼티 선언
+                float _Transparency; // 메쉬의 투명도를 조절하는 프로퍼티 선언
+                float _HeatmapAlpha; // 히트맵의 알파값을 고정하는 프로퍼티 선언
 
                 v2f vert(appdata v)
                 {
@@ -120,7 +121,12 @@ Shader "Unlit/TransparentHeatMap"
 
                     float3 heat = getHeatForPixel(totalWeight);
 
-                    return col * float4(1, 1, 1, _Transparency) + float4(heat, _Transparency);
+                    // 메쉬의 알파값은 _Transparency로, 히트맵은 _HeatmapAlpha로 처리
+                    float meshAlpha = _Transparency; // 메쉬의 투명도는 별도로 적용
+                    float heatmapAlpha = totalWeight > 0 ? _HeatmapAlpha : 0; // 히트맵의 투명도는 히트맵에만 적용
+
+                    // 최종 출력: 메쉬의 알파값과 히트맵의 알파값을 분리
+                    return float4(heat, heatmapAlpha) + col * float4(1, 1, 1, meshAlpha);
                 }
                 ENDCG
             }
