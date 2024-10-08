@@ -3751,6 +3751,7 @@ GameObject:
   - component: {fileID: 1604677466}
   - component: {fileID: 1604677465}
   - component: {fileID: 1604677464}
+  - component: {fileID: 1604677468}
   m_Layer: 7
   m_Name: Quad
   m_TagString: Untagged
@@ -3845,6 +3846,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 905596133}
   m_LocalEulerAnglesHint: {x: 0, y: -51.781, z: 0}
+--- !u!114 &1604677468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604677463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940cf113db309de4680b82ff1649820d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isActivable: 1
+  _exitDelay: 1
+  OnGazeEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGazeStay:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGazeExit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGazeActivated:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGazeToggle:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1643070309
 GameObject:
   m_ObjectHideFlags: 0
@@ -4460,12 +4490,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759954856}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 940cf113db309de4680b82ff1649820d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isActivable: 1
+  _isActivable: 0
   _exitDelay: 1
   OnGazeEnter:
     m_PersistentCalls:
