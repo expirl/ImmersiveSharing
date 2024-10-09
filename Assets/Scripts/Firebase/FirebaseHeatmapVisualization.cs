@@ -1,19 +1,24 @@
+/*
 using System.Collections;
 using System.Collections.Generic;
 using TS.GazeInteraction;
 using UnityEngine;
 using UnityEngine.UI;
+using Firebase;
+using Firebase.Database;
+using Firebase.Extensions;
 
 // MeshRenderer와 x, y 좌표 데이터를 함께 저장할 구조체
-class CollectedData
+[System.Serializable]
+public class CollectedData
 {
     public Vector2 coords;
-    public MeshRenderer meshRenderer;
+    public string meshRendererID;  // Firebase에 저장하기 위한 string 타입 (MeshRenderer의 이름 사용)
 
-    public CollectedData(Vector2 coords, MeshRenderer meshRenderer)
+    public CollectedData(Vector2 coords, string meshRendererID)
     {
         this.coords = coords;
-        this.meshRenderer = meshRenderer;
+        this.meshRendererID = meshRendererID;
     }
 }
 
@@ -27,19 +32,30 @@ public class FirebaseHeatmapVisualization : MonoBehaviour
     private bool isCollecting = false;
 
     public float collectionInterval = 3.0f; // 데이터 수집 간격 (초)
-    public int maxDataCount = 300; 
+    public int maxDataCount = 300;
     private float timeSinceLastCollection = 0.0f;
 
+    public Button transferButton;
     public Button showHeatMapButton;
 
     List<CollectedData> collectedData = new List<CollectedData>();
-    private MeshRenderer currentSavedMeshRenderer;
+   // private MeshRenderer currentSavedMeshRenderer;
+
+    // Firebase 참조 변수
+    DatabaseReference databaseRef;
 
     void Start()
     {
         headGazeHeatmap = GetComponent<HeadGazeHeatmap>();
         collectButton.onClick.AddListener(ToggleDataCollection);
+        transferButton.onClick.AddListener(TransferGazeData);
         showHeatMapButton.onClick.AddListener(BtnShowHeatMap);
+
+        // Firebase 초기화
+        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task => {
+            FirebaseApp app = FirebaseApp.DefaultInstance;
+            databaseRef = FirebaseDatabase.DefaultInstance.RootReference;
+        });
     }
 
     void Update()
@@ -48,8 +64,6 @@ public class FirebaseHeatmapVisualization : MonoBehaviour
         {
             timeSinceLastCollection += Time.deltaTime;
 
-            // collectionInterval (데이터 수집 간격) 만큼 데이터를 수집 하겠다. 
-            // 이는 응시 주기 간격 시간과 동일하게 설정한다.
             if (timeSinceLastCollection >= collectionInterval)
             {
                 CollectData();
@@ -65,7 +79,6 @@ public class FirebaseHeatmapVisualization : MonoBehaviour
 
         if (isCollecting)
         {
-            // 새로운 데이터 수집 시작 시 이전 데이터를 삭제 하기 위함.
             collectedData.Clear();
             Debug.Log("Starting new data collection. Previous data has been cleared.");
         }
@@ -82,7 +95,7 @@ public class FirebaseHeatmapVisualization : MonoBehaviour
         {
             float dataX = textureCoord.Value.x;
             float dataY = textureCoord.Value.y;
-            currentSavedMeshRenderer = gazeInteractor.GetMeshRenderer();
+            MeshRenderer currentSavedMeshRenderer = gazeInteractor.GetMeshRenderer();
 
             if (currentSavedMeshRenderer == null)
             {
@@ -90,16 +103,16 @@ public class FirebaseHeatmapVisualization : MonoBehaviour
                 return;
             }
 
-            collectedData.Add(new CollectedData(new Vector2(dataX, dataY), currentSavedMeshRenderer));
+            // MeshRenderer 오브젝트의 이름을 ID로 사용해 Firebase에 저장할 준비
+            string objectID = currentSavedMeshRenderer.gameObject.name;
+            collectedData.Add(new CollectedData(new Vector2(dataX, dataY), objectID));
 
-            // 최대 데이터 수 제한
             if (collectedData.Count > maxDataCount)
             {
                 collectedData.RemoveAt(0);
             }
 
-            string objectName = currentSavedMeshRenderer.gameObject.name;
-            Debug.Log($"Collected Data - X: {dataX}, Y: {dataY}, Object Name: {objectName}, MeshRenderer saved.");
+            Debug.Log($"Collected Data - X: {dataX}, Y: {dataY}, Object Name: {objectID}, MeshRenderer saved.");
         }
         else
         {
@@ -107,18 +120,72 @@ public class FirebaseHeatmapVisualization : MonoBehaviour
         }
     }
 
-    void BtnShowHeatMap()
+    // Firebase로 데이터를 전송하는 함수
+    void TransferGazeData()
     {
         if (collectedData.Count == 0)
         {
-            Debug.LogWarning("No HeatMap Data available");
+            Debug.LogWarning("No data to transfer.");
             return;
         }
 
         foreach (CollectedData data in collectedData)
         {
-            headGazeHeatmap.AddHitPoint(data.coords.x, data.coords.y, data.meshRenderer);
+            string json = JsonUtility.ToJson(data);
+            databaseRef.Child("gazeData").Push().SetRawJsonValueAsync(json).ContinueWithOnMainThread(task => {
+                if (task.IsCompleted)
+                {
+                    Debug.Log("Data successfully transferred to Firebase.");
+                }
+                else
+                {
+                    Debug.LogWarning("Failed to transfer data to Firebase.");
+                }
+            });
         }
-        Debug.Log($"Heatmap generated with {collectedData.Count} data points.");
+    }
+
+    // Firebase에서 데이터를 가져와 Heatmap을 보여주는 함수
+    void BtnShowHeatMap()
+    {
+        databaseRef.Child("gazeData").GetValueAsync().ContinueWithOnMainThread(task => {
+            if (task.IsCompleted)
+            {
+                DataSnapshot snapshot = task.Result;
+
+                // Firebase에서 불러온 데이터를 heatmap에 추가
+                foreach (DataSnapshot data in snapshot.Children)
+                {
+                    string json = data.GetRawJsonValue();
+                    CollectedData loadedData = JsonUtility.FromJson<CollectedData>(json);
+
+                    // 해당 MeshRenderer 오브젝트를 찾아 heatmap을 생성
+                    MeshRenderer targetMeshRenderer = FindObjectByName(loadedData.meshRendererID);
+                    if (targetMeshRenderer != null)
+                    {
+                        headGazeHeatmap.AddHitPoint(loadedData.coords.x, loadedData.coords.y, targetMeshRenderer);
+                    }
+                }
+
+                Debug.Log("Heatmap successfully generated from Firebase data.");
+            }
+            else
+            {
+                Debug.LogWarning("Failed to load data from Firebase.");
+            }
+        });
+    }
+
+    // 오브젝트 이름으로 MeshRenderer 찾기
+    MeshRenderer FindObjectByName(string objectName)
+    {
+        GameObject targetObject = GameObject.Find(objectName);
+        if (targetObject != null)
+        {
+            return targetObject.GetComponent<MeshRenderer>();
+        }
+        return null;
     }
 }
+
+*/

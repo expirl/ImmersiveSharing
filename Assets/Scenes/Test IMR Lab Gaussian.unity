@@ -1796,52 +1796,16 @@ MonoBehaviour:
   _exitDelay: 1
   OnGazeEnter:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TestGazeInteraction, Assembly-CSharp
-        m_MethodName: GazeEneter
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnGazeStay:
     m_PersistentCalls:
       m_Calls: []
   OnGazeExit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TestGazeInteraction, Assembly-CSharp
-        m_MethodName: GazeExit
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnGazeActivated:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TestGazeInteraction, Assembly-CSharp
-        m_MethodName: GazeActive
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnGazeToggle:
     m_PersistentCalls:
       m_Calls: []
@@ -3598,11 +3562,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gazeInteractor: {fileID: 2002071296}
+  headGazeHeatmap: {fileID: 0}
   collectButton: {fileID: 895690623}
   collectText: {fileID: 895690622}
+  isCollecting: 0
   collectionInterval: 3
   maxDataCount: 300
+  timeSinceLastCollection: 0
+  transferButton: {fileID: 1993021433}
   showHeatMapButton: {fileID: 461861598}
+  collectedData: []
 --- !u!114 &1540481440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4388,8 +4357,7 @@ GameObject:
   - component: {fileID: 1759954860}
   - component: {fileID: 1759954859}
   - component: {fileID: 1759954858}
-  - component: {fileID: 1759954861}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Quad (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4483,35 +4451,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759954856}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1759954861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1759954856}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 940cf113db309de4680b82ff1649820d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isActivable: 0
-  _exitDelay: 1
-  OnGazeEnter:
-    m_PersistentCalls:
-      m_Calls: []
-  OnGazeStay:
-    m_PersistentCalls:
-      m_Calls: []
-  OnGazeExit:
-    m_PersistentCalls:
-      m_Calls: []
-  OnGazeActivated:
-    m_PersistentCalls:
-      m_Calls: []
-  OnGazeToggle:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1766337596
 GameObject:
   m_ObjectHideFlags: 0
@@ -5156,7 +5095,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4422659091188657070, guid: fd28f23af44f73f4a95e33435872ad15, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 275
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4422659091188657070, guid: fd28f23af44f73f4a95e33435872ad15, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -5369,6 +5308,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1993021433 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 732877344778758184, guid: fd28f23af44f73f4a95e33435872ad15, type: 3}
+  m_PrefabInstance: {fileID: 1993021429}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993021431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2002071294
 GameObject:
   m_ObjectHideFlags: 0
@@ -5492,7 +5442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c12d929a7f62c48adbe9ff45c9a33ff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Asset: {fileID: 11400000, guid: 742d3ec54a56d1c408e15d6a63b487ca, type: 2}
+  m_Asset: {fileID: 11400000, guid: 13177fcd21337dd438b91b88ae247e3d, type: 2}
   m_SplatScale: 1
   m_OpacityScale: 1
   m_SHOrder: 3
