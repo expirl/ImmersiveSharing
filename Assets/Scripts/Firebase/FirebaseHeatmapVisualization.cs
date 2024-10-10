@@ -1,4 +1,3 @@
-/*
 using System.Collections;
 using System.Collections.Generic;
 using TS.GazeInteraction;
@@ -188,4 +187,4 @@ public class FirebaseHeatmapVisualization : MonoBehaviour
     }
 }
 
-*/
+

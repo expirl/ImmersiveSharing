@@ -1169,6 +1169,17 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &461861602 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5289182684458692542, guid: e5db301629853dd4a99835fa70099d79, type: 3}
+  m_PrefabInstance: {fileID: 461861593}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461861595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &527039735
 GameObject:
   m_ObjectHideFlags: 0
@@ -2235,6 +2246,17 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &895690626 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5289182684458692542, guid: e5db301629853dd4a99835fa70099d79, type: 3}
+  m_PrefabInstance: {fileID: 895690617}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895690619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &905596132
 GameObject:
   m_ObjectHideFlags: 0
@@ -2522,6 +2544,17 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   handAnimator: {fileID: 1001332959}
+--- !u!114 &1053080755 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3356991306335605903, guid: e5db301629853dd4a99835fa70099d79, type: 3}
+  m_PrefabInstance: {fileID: 895690617}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1063149721
 GameObject:
   m_ObjectHideFlags: 0
@@ -3807,6 +3840,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86bc90743ac9c8047bd60b1aa47b37c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gazeInteractor: {fileID: 2002071296}
+  collectButton: {fileID: 895690626}
+  collectText: {fileID: 1053080755}
+  collectionInterval: 3
+  maxDataCount: 300
+  transferButton: {fileID: 1993021439}
+  showHeatMapButton: {fileID: 461861602}
 --- !u!114 &1540481440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5709,6 +5749,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1993021439 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 732877344778758184, guid: fd28f23af44f73f4a95e33435872ad15, type: 3}
+  m_PrefabInstance: {fileID: 1993021429}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993021431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2002071294
 GameObject:
   m_ObjectHideFlags: 0
