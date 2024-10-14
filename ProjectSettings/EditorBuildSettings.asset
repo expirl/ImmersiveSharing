@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Receiver Gaussian Heatmap.unity
+    guid: be5b58a02f15ae44a8bf1453951320f6
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 9f8d0d39d702fb243802b760c457d6f7, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 45234965e875f894489ff97e5dfd7b01, type: 2}
