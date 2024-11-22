@@ -1,5 +1,9 @@
-# Sharing Heatmaps between users in Reconstructed VR space
- 모든 시행착오 공유 레포지토리
+# ImmersiveSharing
+For a detailed, Please see the paper. Paper Link : 링크
+
+## Introduction
+- This repository is code for paper "Enhancing the Experience Sharing through User Attention HeatMaps and 3D Gaussian Splatting in Virtual Reality".
+- It aims to enhance communication between users by constructing immersive VR spaces using 3D reconstruction and visualizing shared gaze data through heatmaps. 
 
 ## Demo - Sharer
 https://github.com/user-attachments/assets/73303b73-ef4c-4ee9-9408-ffc002ae70e8
@@ -16,7 +20,7 @@ https://github.com/user-attachments/assets/a02900f9-57f1-4b95-852e-79e5d0ab8b97
 - Unity 2022.3.7f1
 
  ## What Features Developed?
- [Compared to the previous repository.](https://github.com/KimGyoungTae/3DGaussian-VR-HeatMap)
+ [Compared to the previous repository.](https://youtu.be/bYPWlAqcOMY)
 - Updated gaze data collection.
 - Transfer and Receive Data from FireBase RealTimeBase.
 - Visualize a heatmap based on the data you've been sent.
