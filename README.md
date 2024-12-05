@@ -1,5 +1,5 @@
 # ImmersiveSharing
-For a detailed, Please see the paper. Paper Link : Preparing.
+For a detailed, Please see the paper. Paper Link : **Preparing.**
 
 🎥 [Detailed Demo Video.](https://www.youtube.com/watch?v=FXJdRBDzgeY)
 
