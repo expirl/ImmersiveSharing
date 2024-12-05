@@ -1,5 +1,7 @@
 # ImmersiveSharing
-For a detailed, Please see the paper. Paper Link : 링크, [Detailed Demo Video.](https://www.youtube.com/watch?v=FXJdRBDzgeY)
+For a detailed, Please see the paper. Paper Link : Preparing.
+
+🎥 [Detailed Demo Video.](https://www.youtube.com/watch?v=FXJdRBDzgeY)
 
 ## Introduction
 - This repository is code for paper "Enhancing the Experience Sharing through User Attention HeatMaps and 3D Gaussian Splatting in Virtual Reality".
