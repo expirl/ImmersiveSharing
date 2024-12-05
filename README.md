@@ -1,5 +1,5 @@
 # ImmersiveSharing
-For a detailed, Please see the paper. Paper Link : 링크
+For a detailed, Please see the paper. Paper Link : 링크, [Detailed Demo Video.](https://www.youtube.com/watch?v=FXJdRBDzgeY)
 
 ## Introduction
 - This repository is code for paper "Enhancing the Experience Sharing through User Attention HeatMaps and 3D Gaussian Splatting in Virtual Reality".
@@ -14,13 +14,13 @@ https://github.com/user-attachments/assets/3c7b1ada-44c8-47bb-bb10-744754e6acea
 https://github.com/user-attachments/assets/a02900f9-57f1-4b95-852e-79e5d0ab8b97
 
 
- ## Tech Stack
+ ## Environment with Develop
 - OpenXR & XR Interaction Toolkit
 - DataBase : Firebase Realtime Database
 - Unity 2022.3.7f1
 
  ## What Features Developed?
- [Compared to the previous repository.](https://youtu.be/bYPWlAqcOMY)
+ [Compared to the previous project.](https://youtu.be/bYPWlAqcOMY)
 - Updated gaze data collection.
 - Transfer and Receive Data from FireBase RealTimeBase.
 - Visualize a heatmap based on the data you've been sent.
