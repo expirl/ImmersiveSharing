@@ -1,7 +1,7 @@
 # ImmersiveSharing
 For a detailed, Please see the paper. Paper Link : **Preparing.**
 
-I plan to provide my space dataset which is pre-made Gaussian Splats asset
+I plan to provide my space dataset which is pre-made Gaussian Splats asset. **Please Wait.**
 
 🎥 [Detailed Demo Video.](https://www.youtube.com/watch?v=FXJdRBDzgeY)
 
