@@ -1,6 +1,8 @@
 # ImmersiveSharing
 For a detailed, Please see the paper. Paper Link : **Preparing.**
 
+I plan to provide my space dataset which is pre-made Gaussian Splats asset
+
 🎥 [Detailed Demo Video.](https://www.youtube.com/watch?v=FXJdRBDzgeY)
 
 ## Introduction
@@ -38,7 +40,8 @@ https://github.com/user-attachments/assets/a02900f9-57f1-4b95-852e-79e5d0ab8b97
 - TransparentHeatMap.shader
 
  ## Pre-check.
-![image](https://github.com/user-attachments/assets/322b5c14-cb77-40a0-bd33-9042a69a8503)
+![image](https://github.com/user-attachments/assets/977cf570-8976-47ab-9cbd-bd33bd1e15d3)
+
 - For Gaussian visualization, Clone the original `UnityGaussianProject` and Copy the package file inside it to the location where the error was found. [UnityGaussianProject](https://github.com/aras-p/UnityGaussianSplatting)
 
 - To use the FireBase database, Get your google-services.json and Put it in StreamingAssets, and Don't forget to download the FireBase Unity SDK. [FIREBASE TUTORIAL](https://www.youtube.com/watch?v=hAa5exkTsKI&t=344s)
