@@ -1,7 +1,9 @@
 # ImmersiveSharing
 For a detailed, Please see the paper. Paper Link : **Preparing.**
 
-I plan to provide my space dataset which is pre-made Gaussian Splats asset. **Please Wait.**
+I plan to provide my space dataset which is pre-made Gaussian Splats asset : **Completed. Please see the links below.**
+
+https://drive.google.com/drive/folders/1rA-D_rgtHcfP4HGZrl52wFrA_k-gpFRK?usp=sharing
 
 🎥 [Detailed Demo Video.](https://www.youtube.com/watch?v=FXJdRBDzgeY)
 
@@ -45,9 +47,12 @@ https://github.com/user-attachments/assets/a02900f9-57f1-4b95-852e-79e5d0ab8b97
 - For Gaussian visualization, Clone the original `UnityGaussianProject` and Copy the package file inside it to the location where the error was found. [UnityGaussianProject](https://github.com/aras-p/UnityGaussianSplatting)
 
 - To use the FireBase database, Get your google-services.json and Put it in StreamingAssets, and Don't forget to download the FireBase Unity SDK. [FIREBASE TUTORIAL](https://www.youtube.com/watch?v=hAa5exkTsKI&t=344s)
-  
+
+- If you want the Demo-like environment, Please download the Gaussian Dataset from the link above.
+
  ## References
 - [3D Gaussian Splatting](https://github.com/graphdeco-inria/gaussian-splatting)
 - [UnityGaussianProject](https://github.com/aras-p/UnityGaussianSplatting)
 - [HeatMap Shader](https://github.com/ericalbers/UnityHeatmapShader?tab=readme-ov-file)
 - [Gaze Reticle](https://assetstore.unity.com/packages/tools/camera/vr-gaze-interaction-system-241337)
+- [HandMenu UI](https://www.youtube.com/watch?v=6PSLfRsN89g)
