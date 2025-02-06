@@ -1,15 +1,13 @@
 # ImmersiveSharing
 For a detailed, Please see the paper. Paper Link : **Preparing.**
 
-I plan to provide my space dataset which is pre-made Gaussian Splats asset : **Completed. Please see the links below.**
-
-https://drive.google.com/drive/folders/1rA-D_rgtHcfP4HGZrl52wFrA_k-gpFRK?usp=sharing
+I plan to provide my space dataset which is pre-made Gaussian Splats asset : **Completed. [Please see the links here.](https://drive.google.com/drive/folders/1rA-D_rgtHcfP4HGZrl52wFrA_k-gpFRK?usp=sharing)**
 
 🎥 [Detailed Demo Video.](https://www.youtube.com/watch?v=FXJdRBDzgeY)
 
 ## Introduction
 - This repository is code for paper "Enhancing the Experience Sharing through User Attention HeatMaps and 3D Gaussian Splatting in Virtual Reality".
-- It aims to enhance communication between users by constructing immersive VR spaces using 3D reconstruction and visualizing shared gaze data through heatmaps. 
+- It aims to enhance communication between users by constructing immersive VR spaces using 3D reconstruction and visualizing shared gaze data through heatmaps.
 
 ## Demo - Sharer
 https://github.com/user-attachments/assets/73303b73-ef4c-4ee9-9408-ffc002ae70e8
