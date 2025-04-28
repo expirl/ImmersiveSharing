@@ -1,5 +1,5 @@
 # ImmersiveSharing
-For a detailed, Please see the paper. Paper Link : **Preparing.**
+For a detailed, Please see the paper. **[DBpia](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12131686) [ResearchGate](https://www.researchgate.net/publication/388960582_Enhancing_the_Experience_Sharing_through_User_Attention_HeatMaps_and_3D_Gaussian_Splatting_in_Virtual_Reality)**
 
 I plan to provide my space dataset which is pre-made Gaussian Splats asset : **Completed. [Please see the links here.](https://drive.google.com/drive/folders/1rA-D_rgtHcfP4HGZrl52wFrA_k-gpFRK?usp=sharing)**
 
