@@ -33,11 +33,11 @@ https://github.com/user-attachments/assets/a02900f9-57f1-4b95-852e-79e5d0ab8b97
 - Add HandMenu UI
 
  ## Update Code.
-- GazeInteractor.cs
-- HeadGazeHeatMap.cs
-- FireBaseHeatMapVisualization.cs
-- AnimateHandOnInput.cs
-- TransparentHeatMap.shader
+- [GazeInteractor.cs](https://github.com/expirl/ImmersiveSharing/blob/main/Assets/GazeInteraction/Scripts/GazeInteractor.cs)
+- [HeadGazeHeatMap.cs](https://github.com/expirl/ImmersiveSharing/blob/main/Assets/Scripts/HeadGaze/HeadGazeHeatmap.cs)
+- [FireBaseHeatMapVisualization.cs](https://github.com/expirl/ImmersiveSharing/blob/main/Assets/Scripts/Firebase/FirebaseHeatmapVisualization.cs)
+- [AnimateHandOnInput.cs](https://github.com/expirl/ImmersiveSharing/blob/main/Assets/Scripts/AnimateHandOnInput.cs)
+- [TransparentHeatMap.shader](https://github.com/expirl/ImmersiveSharing/blob/main/Assets/Shader/TransparentHeatMap.shader)
 
  ## Pre-check.
 ![image](https://github.com/user-attachments/assets/977cf570-8976-47ab-9cbd-bd33bd1e15d3)
